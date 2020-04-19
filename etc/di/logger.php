@@ -1,8 +1,6 @@
 <?php declare(strict_types=1);
 
 use Bramus\Monolog\Formatter\ColoredLineFormatter;
-use function DI\factory;
-use function DI\get;
 use Monolog\Logger;
 use Monolog\Processor;
 use Psr\Log\LoggerInterface;
@@ -14,20 +12,23 @@ use WyriHaximus\Monolog\Processors\RuntimeProcessor;
 use WyriHaximus\Monolog\Processors\ToContextProcessor;
 use WyriHaximus\Monolog\Processors\TraceProcessor;
 use WyriHaximus\React\PSR3\Stdio\StdioLogger;
+use function DI\env;
+use function DI\factory;
+use const WyriHaximus\Constants\Boolean\FALSE_;
+use const WyriHaximus\Constants\Boolean\TRUE_;
 
-return (function () {
+return (static function (): array {
     return [
-        LoggerInterface::class => factory(function (Logger $logger): LoggerInterface {
+        LoggerInterface::class => factory(static function (Logger $logger): LoggerInterface {
             return $logger;
         }),
-        Logger::class => factory(function (
+        Logger::class => factory(static function (
             LoopInterface $loop,
-            string $name,
-            string $version,
-            iterable $handlers = [],
-            iterable $processors = []
+            string $version
+            //            array $processors,
+            //            array $handlers
         ): Logger {
-            $logger = new Logger(\strtolower($name));
+            $logger = new Logger('');
             $logger->pushProcessor(new ToContextProcessor());
             $logger->pushProcessor(new TraceProcessor());
             $logger->pushProcessor(new KeyValueProcessor('version', $version));
@@ -37,27 +38,27 @@ return (function () {
             $logger->pushProcessor(new Processor\IntrospectionProcessor(Logger::NOTICE));
             $logger->pushProcessor(new Processor\MemoryUsageProcessor());
             $logger->pushProcessor(new Processor\MemoryPeakUsageProcessor());
-            foreach ($processors as $processor) {
-                $logger->pushProcessor($processor);
-            }
-            $consoleHandler = new FormattedPsrHandler(StdioLogger::create($loop)->withHideLevel(true));
+//            foreach ($processors as $processor) {
+//                $logger->pushProcessor($processor);
+//            }
+
+            $consoleHandler = new FormattedPsrHandler(StdioLogger::create($loop)->withHideLevel(TRUE_));
             $consoleHandler->setFormatter(new ColoredLineFormatter(
                 null,
                 '[%datetime%] %channel%.%level_name%: %message%',
                 'Y-m-d H:i:s.u',
-                true,
-                false
+                TRUE_,
+                FALSE_
             ));
             $logger->pushHandler($consoleHandler);
-            foreach ($handlers as $handler) {
-                $logger->pushHandler($handler);
-            }
+//            foreach ($handlers as $handler) {
+//                $logger->pushHandler($handler);
+//            }
 
             return $logger;
         })->
-            parameter('name', get('config.app.name'))->
-            parameter('version', get('config.app.version'))->
-            parameter('handlers', get('config.logger.handlers'))->
-            parameter('processors', get('config.logger.processors')),
+            parameter('version', env('APP_VERSION', 'dev-' . time())),
+//            parameter('handlers', get('config.logger.handlers'))->
+//            parameter('processors', get('config.logger.processors')),
     ];
 })();

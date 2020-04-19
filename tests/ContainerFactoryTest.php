@@ -1,10 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace ReactiveApps\Tests;
+namespace Mammatus\Tests;
 
+use Mammatus\ContainerFactory;
+use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
-use Psr\Container\ContainerInterface;
-use ReactiveApps\ContainerFactory;
+use Psr\EventDispatcher\EventDispatcherInterface;
+use Psr\Log\LoggerInterface;
+use WyriHaximus\Broadcast\ContainerListenerProvider;
 
 /**
  * @internal
@@ -13,13 +16,11 @@ final class ContainerFactoryTest extends TestCase
 {
     public function testConfig(): void
     {
-        /** @var ContainerInterface $container */
         $container = ContainerFactory::create();
-        /*var_export([$container]);
-                self::assertTrue($container->has('config'));
-                self::assertTrue($container->has('config.foo'));
-                self::assertTrue($container->has('config.foo.bar'));*/
-        self::assertEquals('baz', $container->get('config.foo.bar'));
-        self::assertEquals('baz', $container->get('config.foo.bar'));
+        self::assertInstanceOf(ContainerListenerProvider::class, $container->get(ContainerListenerProvider::class));
+        self::assertInstanceOf(EventDispatcherInterface::class, $container->get(EventDispatcherInterface::class));
+        self::assertInstanceOf(LoggerInterface::class, $container->get(LoggerInterface::class));
+        self::assertInstanceOf(Logger::class, $container->get(Logger::class));
+        self::assertIsString($container->get('config.mammatus.random'));
     }
 }

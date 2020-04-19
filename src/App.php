@@ -1,96 +1,55 @@
 <?php declare(strict_types=1);
 
-namespace ReactiveApps;
+namespace Mammatus;
 
+use Mammatus\LifeCycleEvents\Boot;
+use Mammatus\LifeCycleEvents\Initialize;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
-use ReactiveApps\LifeCycleEvents\Boot;
-use ReactiveApps\LifeCycleEvents\PreBoot;
-use ReactiveApps\LifeCycleEvents\Shutdown;
-use Silly\Application;
-use Symfony\Component\Console\Input\ArgvInput;
-use Symfony\Component\Console\Output\OutputInterface;
-use WyriHaximus\PSR3\CallableThrowableLogger\CallableThrowableLogger;
 use WyriHaximus\PSR3\ContextLogger\ContextLogger;
+use const WyriHaximus\Constants\Boolean\FALSE_;
+use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class App
 {
-    /**
-     * @var LoopInterface
-     */
-    private $loop;
+    private LoopInterface $loop;
 
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
+    private EventDispatcherInterface $eventDispatcher;
 
-    /**
-     * @var Application
-     */
-    private $application;
+    private LoggerInterface $logger;
 
-    /**
-     * @var OutputInterface
-     */
-    private $output;
+    private bool $booted = FALSE_;
 
-    /**
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
-     * @var bool
-     */
-    private $booted = false;
-
-    /**
-     * @param LoopInterface            $loop
-     * @param EventDispatcherInterface $eventDispatcher
-     * @param Application              $application
-     * @param OutputInterface          $output
-     * @param LoggerInterface          $logger
-     */
-    public function __construct(LoopInterface $loop, EventDispatcherInterface $eventDispatcher, Application $application, OutputInterface $output, LoggerInterface $logger)
+    public function __construct(LoopInterface $loop, EventDispatcherInterface $eventDispatcher, LoggerInterface $logger)
     {
-        $this->loop = $loop;
+        $this->loop            = $loop;
         $this->eventDispatcher = $eventDispatcher;
-        $this->application = $application;
-        $this->output = $output;
-        $this->logger = new ContextLogger($logger, [], 'app');
+        $this->logger          = new ContextLogger($logger, [], 'app');
     }
 
-    public function boot(array $argv)
+    public function boot(): int
     {
-        if ($this->booted === true) {
+        if ($this->booted === TRUE_) {
             $this->logger->emergency('Can\'t be booted twice');
 
-            return;
+            return ExitCode::FAILURE;
         }
 
-        $this->eventDispatcher->dispatch(new PreBoot());
+        $this->eventDispatcher->dispatch(new Initialize());
 
-        $this->booted = true;
+        $this->booted = TRUE_;
         $this->logger->debug('Booting');
 
         $this->eventDispatcher->dispatch(new Boot());
 
-        $exitCode = null;
-        $this->loop->futureTick(function () use ($argv, &$exitCode): void {
-            $this->logger->debug('Running');
+        $exitCode = ExitCode::SUCCESS;
+        $this->loop->futureTick(function (): void {
+            $this->logger->debug('Loop execution running');
         });
-        $this->logger->debug('Starting loop');
-
-        $exitCode = ExitCode::FAILURE;
-        try {
-            $exitCode = $this->application->run(new ArgvInput($argv), $this->output);
-            $this->eventDispatcher->dispatch(new Shutdown());
-        } catch (\Throwable $et) {
-            CallableThrowableLogger::create($this->logger)($et);
-        }
-
+        $this->logger->debug('Loop execution starting');
+        $this->loop->run();
+        $this->logger->debug('Loop execution ended');
         $this->logger->debug('Execution completed with exit code: ' . $exitCode);
 
         return $exitCode;
