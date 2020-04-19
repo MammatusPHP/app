@@ -1,0 +1,21 @@
+#!/usr/bin/php
+<?php declare(strict_types=1);
+
+use Mammatus\App;
+use Mammatus\ContainerFactory;
+
+(function() {
+    /**
+     * Require Composer's autoloader
+     */
+    require_once '%s';
+})();
+
+(function() {
+    /**
+     * Create and boot up the application
+     */
+    exit((function (): int {
+        return ContainerFactory::create()->get(App::class)->boot();
+    })());
+})();
