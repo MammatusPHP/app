@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c931ce1558ad983cf637571a505072eb",
+    "content-hash": "cc663a9dc97b53da76de98281c353080",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -2330,12 +2330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-broadcast.git",
-                "reference": "369b2dd0a3947d3e3fff89dd980c67677554a2c1"
+                "reference": "9f9577cb1cc3e4c1cbb190d01aaf46105e1fada9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-broadcast/zipball/369b2dd0a3947d3e3fff89dd980c67677554a2c1",
-                "reference": "369b2dd0a3947d3e3fff89dd980c67677554a2c1",
+                "url": "https://api.github.com/repos/WyriHaximus/php-broadcast/zipball/9f9577cb1cc3e4c1cbb190d01aaf46105e1fada9",
+                "reference": "9f9577cb1cc3e4c1cbb190d01aaf46105e1fada9",
                 "shasum": ""
             },
             "require": {
@@ -2348,6 +2348,7 @@
                 "reactivex/rxphp": "^2.0",
                 "roave/better-reflection": "^4.0",
                 "thecodingmachine/safe": "^1.1",
+                "wyrihaximus/broadcast-contracts": "dev-master",
                 "wyrihaximus/constants": "^1.5",
                 "wyrihaximus/get-in-packages-composer.jason": "^1.0",
                 "wyrihaximus/iterator-or-array-to-array": "^1.1",
@@ -2379,7 +2380,37 @@
                 "MIT"
             ],
             "description": "✨ Staticly on composer install/update compiled event dispatcher",
-            "time": "2020-04-19T13:30:23+00:00"
+            "time": "2020-04-20T22:19:01+00:00"
+        },
+        {
+            "name": "wyrihaximus/broadcast-contracts",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-broadcast-contracts.git",
+                "reference": "98d20dcd4e462ecf434d8d39ee5807fa8d43f4bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-broadcast-contracts/zipball/98d20dcd4e462ecf434d8d39ee5807fa8d43f4bd",
+                "reference": "98d20dcd4e462ecf434d8d39ee5807fa8d43f4bd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Broadcast\\Contracts\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "✨ Contracts for wyrihaximus/broadcast",
+            "time": "2020-04-20T22:13:16+00:00"
         },
         {
             "name": "wyrihaximus/composer-update-bin-autoload-path",
@@ -7794,6 +7825,7 @@
     "stability-flags": {
         "mammatus/life-cycle-events": 20,
         "wyrihaximus/broadcast": 20,
+        "wyrihaximus/broadcast-contracts": 20,
         "wyrihaximus/composer-update-bin-autoload-path": 20,
         "mammatus/test-app": 20
     },

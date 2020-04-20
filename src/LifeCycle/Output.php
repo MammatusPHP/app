@@ -4,7 +4,7 @@ namespace Mammatus\LifeCycle;
 
 use Mammatus\LifeCycleEvents\Initialize;
 use React\EventLoop\LoopInterface;
-use WyriHaximus\Broadcast\Marker\Listener;
+use WyriHaximus\Broadcast\Contracts\Listener;
 use const STDERR;
 use const STDIN;
 use const STDOUT;

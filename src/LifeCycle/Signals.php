@@ -7,7 +7,7 @@ use Mammatus\LifeCycleEvents\Shutdown;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
-use WyriHaximus\Broadcast\Marker\Listener;
+use WyriHaximus\Broadcast\Contracts\Listener;
 use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 use const SIGINT;
 use const SIGTERM;
