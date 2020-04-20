@@ -8,7 +8,6 @@
         "ext-pcntl": "^7.4",
         "bramus/monolog-colored-line-formatter": "^3.0",
         "clue/block-react": "^1.3",
-        "composer-plugin-api": "^1.1",
         "doctrine/annotations": "^1.4",
         "mammatus/life-cycle-events": "dev-master",
         "monolog/monolog": "^2.0",
@@ -22,6 +21,7 @@
         "react/event-loop": "^1.0 || ^0.5",
         "thecodingmachine/safe": "^1.1",
         "wyrihaximus/broadcast": "dev-next-gen",
+        "wyrihaximus/composer-update-bin-autoload-path": "dev-master",
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
         "wyrihaximus/get-in-packages-composer.jason": "^1.0",
@@ -42,7 +42,6 @@
         "sort-packages": true
     },
     "extra": {
-        "class": "Mammatus\\Composer\\BinPathUpdater",
         "mammatus": {
             "config": [
                 "etc/config/*.php"
@@ -54,6 +53,9 @@
             ]
         },
         "wyrihaximus": {
+            "bin-autoload-path-update": [
+                "bin/mammatus"
+            ],
             "broadcast": {
                 "has-listeners": true
             }
@@ -80,9 +82,6 @@
         ],
         "post-update-cmd": [
             "composer normalize"
-        ],
-        "pre-autoload-dump": [
-            "Mammatus\\Composer\\BinPathUpdater::updateBinPath"
         ]
     }
 }
