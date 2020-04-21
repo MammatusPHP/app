@@ -1,6 +1,5 @@
 {
     "name": "mammatus/app",
-    "type": "composer-plugin",
     "description": "\ud83d\ude82 Main entry point for all MammatusPHP applications",
     "license": "MIT",
     "require": {
