@@ -11,7 +11,7 @@
         "mammatus/life-cycle-events": "dev-master",
         "monolog/monolog": "^2.0",
         "php-di-definitions/definitions-gatherer": "^1.0",
-        "php-di-definitions/react-event-loop": "^1.0",
+        "php-di-definitions/react-event-loop-inspected": "dev-master",
         "php-di-definitions/react-recoil": "^1.0",
         "php-di/php-di": "^6.0",
         "psr/container": "^1.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc663a9dc97b53da76de98281c353080",
+    "content-hash": "675f2408c46989df3f644bca6de20953",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -863,25 +863,31 @@
             "time": "2019-01-12T17:12:23+00:00"
         },
         {
-            "name": "php-di-definitions/react-event-loop",
-            "version": "1.0.0",
+            "name": "php-di-definitions/react-event-loop-inspected",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/PHP-DI-Definitions/reactphp-event-loop.git",
-                "reference": "81d59eabb5df970added99e7f163aaf267f487d3"
+                "url": "https://github.com/PHP-DI-Definitions/reactphp-event-loop-inspected.git",
+                "reference": "7c0a23b4c8a43d0f4f921dd05323ec9c13019615"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI-Definitions/reactphp-event-loop/zipball/81d59eabb5df970added99e7f163aaf267f487d3",
-                "reference": "81d59eabb5df970added99e7f163aaf267f487d3",
+                "url": "https://api.github.com/repos/PHP-DI-Definitions/reactphp-event-loop-inspected/zipball/7c0a23b4c8a43d0f4f921dd05323ec9c13019615",
+                "reference": "7c0a23b4c8a43d0f4f921dd05323ec9c13019615",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2",
-                "react/event-loop": "^1.0 || ^0.5"
+                "php": "^7.4",
+                "react-inspector/event-loop": "^1.0",
+                "react-inspector/memory-usage": "^1.0",
+                "react-inspector/metric": "^1.0",
+                "react-inspector/metrics": "^1.0",
+                "react-inspector/stream": "^1.0",
+                "react/event-loop": "^1.1",
+                "voryx/event-loop": "^3.0"
             },
             "require-dev": {
-                "api-clients/test-utilities": "^5.1"
+                "wyrihaximus/test-utilities": "^2.2"
             },
             "type": "library",
             "extra": {
@@ -891,12 +897,26 @@
                     ]
                 }
             },
+            "autoload": {
+                "psr-4": {
+                    "PHPDIDefinitions\\ReactInspector\\": "src/"
+                },
+                "files": [
+                    "etc/bootstrap.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "PHP-DI definition for the ReactPHP event loop",
-            "time": "2018-11-03T22:29:00+00:00"
+            "description": "PHP-DI definition for the Inspected ReactPHP event loop",
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-04-19T20:02:13+00:00"
         },
         {
             "name": "php-di-definitions/react-recoil",
@@ -1374,6 +1394,304 @@
                 "psr-3"
             ],
             "time": "2020-03-23T09:12:05+00:00"
+        },
+        {
+            "name": "react-inspector/event-loop",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp-inspector/event-loop.git",
+                "reference": "7e78aaaf8feacec38e56b0a07233ab96731f2130"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp-inspector/event-loop/zipball/7e78aaaf8feacec38e56b0a07233ab96731f2130",
+                "reference": "7e78aaaf8feacec38e56b0a07233ab96731f2130",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0",
+                "php": "^7.4",
+                "react-inspector/metric": "^1.0",
+                "react-inspector/metrics": "^1.0",
+                "react/event-loop": "^1.1",
+                "reactivex/rxphp": "^2.0",
+                "wyrihaximus/constants": "^1.4",
+                "wyrihaximus/iterator-or-array-to-array": "^1.1"
+            },
+            "require-dev": {
+                "thecodingmachine/safe": "^1.1",
+                "wyrihaximus/async-test-utilities": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ReactInspector\\EventLoop\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com",
+                    "homepage": "http://wyrihaximus.net/"
+                }
+            ],
+            "description": "🌀 Measure the Event Loop",
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-03-29T20:52:27+00:00"
+        },
+        {
+            "name": "react-inspector/memory-usage",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp-inspector/memory-usage.git",
+                "reference": "e720a6a121faa986df21f9313d7720892de86804"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp-inspector/memory-usage/zipball/e720a6a121faa986df21f9313d7720892de86804",
+                "reference": "e720a6a121faa986df21f9313d7720892de86804",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4",
+                "react-inspector/metric": "^1.0",
+                "react-inspector/metrics": "^1.0",
+                "reactivex/rxphp": "^2.0",
+                "thecodingmachine/safe": "^1.0",
+                "wyrihaximus/constants": "^1.4"
+            },
+            "require-dev": {
+                "wyrihaximus/async-test-utilities": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "react-inspector": {
+                    "collectors": {
+                        "ReactInspector\\MemoryUsage": "src"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReactInspector\\MemoryUsage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com",
+                    "homepage": "https://www.wyrihaximus.net/"
+                }
+            ],
+            "description": "📶 Measure the memory usage of the current PHP process",
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-03-23T21:48:23+00:00"
+        },
+        {
+            "name": "react-inspector/metric",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp-inspector/metric.git",
+                "reference": "8facabd382dc1b770155f09c8c101089619f975d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp-inspector/metric/zipball/8facabd382dc1b770155f09c8c101089619f975d",
+                "reference": "8facabd382dc1b770155f09c8c101089619f975d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4",
+                "thecodingmachine/safe": "^1.0"
+            },
+            "require-dev": {
+                "wyrihaximus/test-utilities": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "unused": [
+                    "php"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReactInspector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com",
+                    "homepage": "https://www.wyrihaximus.net/"
+                }
+            ],
+            "description": "📐 Metric VO's",
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-03-15T21:24:35+00:00"
+        },
+        {
+            "name": "react-inspector/metrics",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp-inspector/metrics.git",
+                "reference": "026ab0853bbb671aa8d85275a640935c674542a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp-inspector/metrics/zipball/026ab0853bbb671aa8d85275a640935c674542a2",
+                "reference": "026ab0853bbb671aa8d85275a640935c674542a2",
+                "shasum": ""
+            },
+            "require": {
+                "api-clients/rx": "^2.2",
+                "php": "^7.4",
+                "react-inspector/metric": "^1.0",
+                "react/event-loop": "^1.1",
+                "reactivex/rxphp": "^2.0",
+                "thecodingmachine/safe": "^1.0",
+                "wyrihaximus/ticking-promise": "^1.6"
+            },
+            "require-dev": {
+                "wyrihaximus/async-test-utilities": "^2.0"
+            },
+            "suggest": {
+                "react-inspector/bunny": "Measure what is going through fread/fwrite calls from bunny/bunny",
+                "react-inspector/event-loop": "Measure what is going through the event loop",
+                "react-inspector/memory-usage": "Message the memory usage of the current PHP process",
+                "react-inspector/stream": "Measure what is going through fread/fwrite calls from react/stream"
+            },
+            "type": "library",
+            "extra": {
+                "react-inspector": {
+                    "collectors": {
+                        "ReactInspector\\Collector": "src/Collector"
+                    },
+                    "metrics": [
+                        "inspector.metrics"
+                    ],
+                    "reset": {
+                        "ticks": [
+                            "inspector.metrics"
+                        ]
+                    }
+                },
+                "unused": [
+                    "php"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "ReactInspector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com",
+                    "homepage": "http://wyrihaximus.net/"
+                }
+            ],
+            "description": "☄ Metrics stream",
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-03-18T17:13:22+00:00"
+        },
+        {
+            "name": "react-inspector/stream",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp-inspector/stream.git",
+                "reference": "f4b5b57d000c3dc2fd3ea7337cbdaf3afdde5c32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp-inspector/stream/zipball/f4b5b57d000c3dc2fd3ea7337cbdaf3afdde5c32",
+                "reference": "f4b5b57d000c3dc2fd3ea7337cbdaf3afdde5c32",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "^4.3",
+                "php": "^7.4",
+                "react-inspector/metric": "^1.0",
+                "react-inspector/metrics": "^1.0",
+                "react/event-loop": "^1.0",
+                "react/stream": "^1.0",
+                "reactivex/rxphp": "^2.0",
+                "roave/better-reflection": "^4.0",
+                "wyrihaximus/constants": "^1.5",
+                "wyrihaximus/iterator-or-array-to-array": "^1.1"
+            },
+            "require-dev": {
+                "wyrihaximus/async-test-utilities": "^2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ReactInspector\\Stream\\": "src/"
+                },
+                "files": [
+                    "src/bootstrap.php",
+                    "src/include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "🌊 React Stream throughput inspector",
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-04-03T18:47:31+00:00"
         },
         {
             "name": "react/event-loop",
@@ -2277,6 +2595,62 @@
             "time": "2020-03-24T13:59:42+00:00"
         },
         {
+            "name": "voryx/event-loop",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/voryx/event-loop.git",
+                "reference": "ed7ee6236945b64591f8ef2be855e6244f1439e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/voryx/event-loop/zipball/ed7ee6236945b64591f8ef2be855e6244f1439e6",
+                "reference": "ed7ee6236945b64591f8ef2be855e6244f1439e6",
+                "shasum": ""
+            },
+            "require": {
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EventLoop\\": "src"
+                },
+                "files": [
+                    "src/functions.php",
+                    "src/bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Bonneau",
+                    "email": "matt@bonneau.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "David Dan",
+                    "email": "davidwdan@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Global static wrapper for react event-loop",
+            "keywords": [
+                "event-loop",
+                "eventloop",
+                "global",
+                "static",
+                "timer"
+            ],
+            "time": "2018-04-18T00:07:06+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.8.0",
             "source": {
@@ -2950,6 +3324,53 @@
             ],
             "description": "Wrapper around igorw/get-in using strings rather then arrays are keys",
             "time": "2018-10-14T15:34:54+00:00"
+        },
+        {
+            "name": "wyrihaximus/ticking-promise",
+            "version": "1.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/TickingPromise.git",
+                "reference": "4bb99024402bb7526de8880f3dab0c1f0858def5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/TickingPromise/zipball/4bb99024402bb7526de8880f3dab0c1f0858def5",
+                "reference": "4bb99024402bb7526de8880f3dab0c1f0858def5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^5.4",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4",
+                "react/promise": "~2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4",
+                "squizlabs/php_codesniffer": "^1.5.6",
+                "vectorface/dunit": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\React\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com",
+                    "homepage": "http://wyrihaximus.net/"
+                }
+            ],
+            "description": "Wrapping ticks into a promise",
+            "time": "2018-04-05T12:36:50+00:00"
         }
     ],
     "packages-dev": [
@@ -7824,6 +8245,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "mammatus/life-cycle-events": 20,
+        "php-di-definitions/react-event-loop-inspected": 20,
         "wyrihaximus/broadcast": 20,
         "wyrihaximus/broadcast-contracts": 20,
         "wyrihaximus/composer-update-bin-autoload-path": 20,
