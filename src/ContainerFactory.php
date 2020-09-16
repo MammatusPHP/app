@@ -10,10 +10,13 @@ use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class ContainerFactory
 {
-    public static function create(): ContainerInterface
+    public static function create(array $overrides = []): ContainerInterface
     {
         /** @psalm-suppress InvalidArgument */
         $definitions = iterator_to_array(DefinitionsGatherer::gather());
+        foreach ($overrides as $key => $value) {
+            $definitions[$key] = $value;
+        }
         $container   = new ContainerBuilder();
         $container->useAnnotations(TRUE_);
         foreach (ConfigurationLocator::locate() as $key => $value) {
