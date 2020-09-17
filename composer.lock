@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "132b288788cd07461caf6fe458d743bb",
+    "content-hash": "317ab4e3ca8911b790dfa65befa7747c",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -2973,6 +2973,53 @@
             ],
             "description": "Allows you to list full qualified class names in directories and files.",
             "time": "2020-04-15T13:49:42+00:00"
+        },
+        {
+            "name": "wyrihaximus/metrics",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-metrics.git",
+                "reference": "bf4d310aa6f952ce5a5a09d9d238300a09d1e5fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-metrics/zipball/bf4d310aa6f952ce5a5a09d9d238300a09d1e5fe",
+                "reference": "bf4d310aa6f952ce5a5a09d9d238300a09d1e5fe",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4",
+                "thecodingmachine/safe": "^1.1"
+            },
+            "require-dev": {
+                "phpbench/phpbench": "^0.17.1",
+                "wyrihaximus/test-utilities": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Metrics\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "Pure metric VO's",
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-04T12:01:30+00:00"
         },
         {
             "name": "wyrihaximus/monolog-formatted-psr-handler",
@@ -8973,6 +9020,7 @@
         "php-di-definitions/react-event-loop-inspected": 20,
         "wyrihaximus/broadcast": 20,
         "wyrihaximus/composer-update-bin-autoload-path": 20,
+        "wyrihaximus/metrics": 20,
         "mammatus/test-app": 20
     },
     "prefer-stable": true,

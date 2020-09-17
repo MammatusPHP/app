@@ -25,6 +25,7 @@
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
         "wyrihaximus/get-in-packages-composer.jason": "^1.0",
+        "wyrihaximus/metrics": "dev-master",
         "wyrihaximus/monolog-formatted-psr-handler": "^1.0",
         "wyrihaximus/monolog-processors": "^1.1",
         "wyrihaximus/psr-3-context-logger": "^1.0",
