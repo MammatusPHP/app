@@ -56,7 +56,13 @@
         "react-parallel": {
             "object-proxy": {
                 "interfaces-to-proxy": [
-                    "WyriHaximus\\Metrics\\Registry"
+                    "WyriHaximus\\Metrics\\Registry",
+                    "WyriHaximus\\Metrics\\Registry\\Counters",
+                    "WyriHaximus\\Metrics\\Registry\\Gauges",
+                    "WyriHaximus\\Metrics\\Registry\\Histograms",
+                    "WyriHaximus\\Metrics\\Counter",
+                    "WyriHaximus\\Metrics\\Gauge",
+                    "WyriHaximus\\Metrics\\Histogram"
                 ]
             }
         },
