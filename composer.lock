@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a50a69e32614ee71bc838af078b8235",
+    "content-hash": "38b03ce22c90ca2b383135173952c7aa",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -4435,6 +4435,67 @@
                 }
             ],
             "time": "2020-11-03T12:25:19+00:00"
+        },
+        {
+            "name": "wyrihaximus/monolog-factory",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-monolog-factory.git",
+                "reference": "e2fd56865e904336ccfab34c0a35deba391f6e6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-monolog-factory/zipball/e2fd56865e904336ccfab34c0a35deba391f6e6c",
+                "reference": "e2fd56865e904336ccfab34c0a35deba391f6e6c",
+                "shasum": ""
+            },
+            "require": {
+                "bramus/monolog-colored-line-formatter": "^3.0",
+                "monolog/monolog": "^2.1",
+                "php": "^7.4",
+                "psr/log": "^1.1",
+                "wyrihaximus/constants": "^1.5",
+                "wyrihaximus/monolog-formatted-psr-handler": "^1.2",
+                "wyrihaximus/monolog-processors": "^1.3"
+            },
+            "require-dev": {
+                "wyrihaximus/test-utilities": "^3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "unused": [
+                    "php"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Monolog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com"
+                }
+            ],
+            "description": "🧐🏭 Opinionated Monolog factory",
+            "support": {
+                "issues": "https://github.com/WyriHaximus/php-monolog-factory/issues",
+                "source": "https://github.com/WyriHaximus/php-monolog-factory/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-07T12:57:58+00:00"
         },
         {
             "name": "wyrihaximus/monolog-formatted-psr-handler",
@@ -11090,6 +11151,7 @@
         "wyrihaximus/broadcast": 20,
         "wyrihaximus/composer-update-bin-autoload-path": 20,
         "wyrihaximus/metrics": 20,
+        "wyrihaximus/monolog-factory": 20,
         "mammatus/test-app": 20
     },
     "prefer-stable": true,
@@ -11100,7 +11162,7 @@
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.4"
+        "php": "7.4.7"
     },
     "plugin-api-version": "2.0.0"
 }

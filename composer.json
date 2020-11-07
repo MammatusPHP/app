@@ -29,8 +29,7 @@
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
         "wyrihaximus/get-in-packages-composer.jason": "^1.0",
         "wyrihaximus/metrics": "dev-master",
-        "wyrihaximus/monolog-formatted-psr-handler": "^1.0",
-        "wyrihaximus/monolog-processors": "^1.1",
+        "wyrihaximus/monolog-factory": "9999999-dev",
         "wyrihaximus/psr-3-context-logger": "^1.0",
         "wyrihaximus/react-psr-3-stdio": "^2.0"
     },
@@ -41,7 +40,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.4"
+            "php": "7.4.7"
         },
         "sort-packages": true
     },
