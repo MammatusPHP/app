@@ -29,7 +29,7 @@
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
         "wyrihaximus/get-in-packages-composer.jason": "^1.0",
         "wyrihaximus/metrics": "dev-master",
-        "wyrihaximus/monolog-factory": "9999999-dev",
+        "wyrihaximus/monolog-factory": "^1.0",
         "wyrihaximus/psr-3-context-logger": "^1.0",
         "wyrihaximus/react-psr-3-stdio": "^2.0"
     },
