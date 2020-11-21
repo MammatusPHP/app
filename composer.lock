@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a0b75df0235fefc530f94a45e9fe9db",
+    "content-hash": "65872a33e53c624bdc3f406f83ba5164",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -519,7 +519,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.13.0",
+            "version": "v8.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -573,16 +573,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.13.0",
+            "version": "v8.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "c23428149639d5257916ad10d390cdbeffe4d504"
+                "reference": "d9e6a156efb8332dcce427b7d1ccd2706609bfa5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/c23428149639d5257916ad10d390cdbeffe4d504",
-                "reference": "c23428149639d5257916ad10d390cdbeffe4d504",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/d9e6a156efb8332dcce427b7d1ccd2706609bfa5",
+                "reference": "d9e6a156efb8332dcce427b7d1ccd2706609bfa5",
                 "shasum": ""
             },
             "require": {
@@ -617,11 +617,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-10-28T13:17:42+00:00"
+            "time": "2020-11-10T15:48:45+00:00"
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.13.0",
+            "version": "v8.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -934,22 +934,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/MammatusPHP/metrics.git",
-                "reference": "d63c75acde2f76517e3d650bcfbc057e152a2514"
+                "reference": "4ef5ad942be0459370dbeac46fcfd5bbcfc1abc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MammatusPHP/metrics/zipball/d63c75acde2f76517e3d650bcfbc057e152a2514",
-                "reference": "d63c75acde2f76517e3d650bcfbc057e152a2514",
+                "url": "https://api.github.com/repos/MammatusPHP/metrics/zipball/4ef5ad942be0459370dbeac46fcfd5bbcfc1abc2",
+                "reference": "4ef5ad942be0459370dbeac46fcfd5bbcfc1abc2",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4",
-                "react-parallel/event-loop": "dev-add-metrics as 1.1.1",
+                "react-parallel/event-loop": "^1.1",
                 "react-parallel/object-proxy": "dev-master",
                 "react-parallel/psr-11-container-proxy": "dev-master",
-                "react-parallel/react-parallel": "dev-add-metrics as 1.1.1",
-                "wyrihaximus/metrics": "dev-master",
-                "wyrihaximus/metrics-tactician": "dev-master"
+                "react-parallel/react-parallel": "^1.1",
+                "wyrihaximus/metrics": "^1.0",
+                "wyrihaximus/metrics-tactician": "^1.0"
             },
             "require-dev": {
                 "wyrihaximus/async-test-utilities": "^2.3"
@@ -972,7 +972,7 @@
                 "issues": "https://github.com/MammatusPHP/metrics/issues",
                 "source": "https://github.com/MammatusPHP/metrics/tree/master"
             },
-            "time": "2020-11-04T00:56:51+00:00"
+            "time": "2020-11-21T13:07:00+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2343,16 +2343,16 @@
         },
         {
             "name": "react-parallel/event-loop",
-            "version": "dev-add-metrics",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp-parallel/event-loop.git",
-                "reference": "c8ce63bacef5df7303502ccf160d35f204af00ac"
+                "reference": "e859517ed6ef556ca6006ebff13899ed4e78bb93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp-parallel/event-loop/zipball/c8ce63bacef5df7303502ccf160d35f204af00ac",
-                "reference": "c8ce63bacef5df7303502ccf160d35f204af00ac",
+                "url": "https://api.github.com/repos/reactphp-parallel/event-loop/zipball/e859517ed6ef556ca6006ebff13899ed4e78bb93",
+                "reference": "e859517ed6ef556ca6006ebff13899ed4e78bb93",
                 "shasum": ""
             },
             "require": {
@@ -2362,10 +2362,10 @@
                 "react/promise": "^2.7",
                 "reactivex/rxphp": "^2.0",
                 "wyrihaximus/constants": "^1.4.3",
-                "wyrihaximus/metrics": "dev-master"
+                "wyrihaximus/metrics": "^1.0"
             },
             "require-dev": {
-                "wyrihaximus/async-test-utilities": "^2.2"
+                "wyrihaximus/async-test-utilities": "^3.2"
             },
             "type": "library",
             "extra": {
@@ -2392,7 +2392,7 @@
             "description": "🌀🌉🌀 Event Loop bridge to ext-parallel Events",
             "support": {
                 "issues": "https://github.com/reactphp-parallel/event-loop/issues",
-                "source": "https://github.com/reactphp-parallel/event-loop/tree/add-metrics"
+                "source": "https://github.com/reactphp-parallel/event-loop/tree/1.1.0"
             },
             "funding": [
                 {
@@ -2400,20 +2400,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-23T13:39:16+00:00"
+            "time": "2020-11-17T20:50:24+00:00"
         },
         {
             "name": "react-parallel/infinite-pool",
-            "version": "2.0.0",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp-parallel/infinite-pool.git",
-                "reference": "a7efc85bafb88977eea4f316c4cbc5c6ef612ae7"
+                "reference": "fb2b923793527f76a77915476b58186ec1d21109"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp-parallel/infinite-pool/zipball/a7efc85bafb88977eea4f316c4cbc5c6ef612ae7",
-                "reference": "a7efc85bafb88977eea4f316c4cbc5c6ef612ae7",
+                "url": "https://api.github.com/repos/reactphp-parallel/infinite-pool/zipball/fb2b923793527f76a77915476b58186ec1d21109",
+                "reference": "fb2b923793527f76a77915476b58186ec1d21109",
                 "shasum": ""
             },
             "require": {
@@ -2424,16 +2424,15 @@
                 "react-parallel/runtime": "^2.0",
                 "react/event-loop": "^1.1",
                 "react/promise": "^2.7",
-                "wyrihaximus/constants": "^1.4",
-                "wyrihaximus/pool-info": "^1.0",
-                "wyrihaximus/ticking-promise": "^1.6"
+                "wyrihaximus/constants": "^1.5",
+                "wyrihaximus/metrics": "^1.0",
+                "wyrihaximus/pool-info": "^1.0"
             },
             "require-dev": {
                 "bruli/php-value-objects": "^2.0",
                 "moneyphp/money": "^3.2 || ^3.2.1",
-                "ocramius/package-versions": "^1.4",
-                "react-parallel/pool-tests": "^2.0",
-                "wyrihaximus/async-test-utilities": "^2.2",
+                "react-parallel/pool-tests": "^3.0",
+                "wyrihaximus/async-test-utilities": "^3.2",
                 "wyrihaximus/iterator-or-array-to-array": "^1.1"
             },
             "type": "library",
@@ -2456,7 +2455,7 @@
             "description": "♾️ Infinite pool for bridging ext-parallel and ReactPHP",
             "support": {
                 "issues": "https://github.com/reactphp-parallel/infinite-pool/issues",
-                "source": "https://github.com/reactphp-parallel/infinite-pool/tree/2.0.0"
+                "source": "https://github.com/reactphp-parallel/infinite-pool/tree/2.1.2"
             },
             "funding": [
                 {
@@ -2464,7 +2463,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-07-06T19:18:05+00:00"
+            "time": "2020-11-21T12:37:59+00:00"
         },
         {
             "name": "react-parallel/limited-pool",
@@ -2535,12 +2534,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp-parallel/object-proxy.git",
-                "reference": "8608c02a75fba95fcc73bdc2a7b990e8ba41f131"
+                "reference": "41fdba4ea302d38cb93501476cd7925163de9078"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp-parallel/object-proxy/zipball/8608c02a75fba95fcc73bdc2a7b990e8ba41f131",
-                "reference": "8608c02a75fba95fcc73bdc2a7b990e8ba41f131",
+                "url": "https://api.github.com/repos/reactphp-parallel/object-proxy/zipball/41fdba4ea302d38cb93501476cd7925163de9078",
+                "reference": "41fdba4ea302d38cb93501476cd7925163de9078",
                 "shasum": ""
             },
             "require": {
@@ -2555,17 +2554,17 @@
                 "psr/container": "^1.0",
                 "psr/log": "^1.1",
                 "react-parallel/object-proxy-attributes": "^1",
-                "react-parallel/react-parallel": "^1.0",
+                "react-parallel/react-parallel": "^1",
                 "rx/operator-extras": "^2.1",
                 "wyrihaximus/constants": "^1.5",
                 "wyrihaximus/iterator-or-array-to-array": "^1.1",
-                "wyrihaximus/metrics": "dev-master",
+                "wyrihaximus/metrics": "^1.0.2",
                 "wyrihaximus/string-get-in": "^1.0"
             },
             "require-dev": {
                 "monolog/monolog": "^2.1",
                 "thecodingmachine/safe": "^1.3",
-                "wyrihaximus/async-test-utilities": "^2.4",
+                "wyrihaximus/async-test-utilities": "^3.2",
                 "yuloh/container": "^1.0"
             },
             "default-branch": true,
@@ -2617,7 +2616,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-07T22:21:22+00:00"
+            "time": "2020-11-20T22:19:31+00:00"
         },
         {
             "name": "react-parallel/object-proxy-attributes",
@@ -2742,36 +2741,38 @@
         },
         {
             "name": "react-parallel/react-parallel",
-            "version": "dev-add-metrics",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp-parallel/reactphp-parallel.git",
-                "reference": "252fa1624d7bc647bb0de723547507e79de9a3e9"
+                "reference": "9fa0f4788e92e2f1feb6c0e87e3dce3fcab411a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp-parallel/reactphp-parallel/zipball/252fa1624d7bc647bb0de723547507e79de9a3e9",
-                "reference": "252fa1624d7bc647bb0de723547507e79de9a3e9",
+                "url": "https://api.github.com/repos/reactphp-parallel/reactphp-parallel/zipball/9fa0f4788e92e2f1feb6c0e87e3dce3fcab411a9",
+                "reference": "9fa0f4788e92e2f1feb6c0e87e3dce3fcab411a9",
                 "shasum": ""
             },
             "require": {
                 "ext-parallel": "*",
                 "php": "^7.4",
                 "react-parallel/contracts": "^1.0",
-                "react-parallel/event-loop": "dev-add-metrics as 1.1.1",
-                "react-parallel/infinite-pool": "^2.0",
+                "react-parallel/event-loop": "^1.1",
+                "react-parallel/infinite-pool": "^2.1",
                 "react-parallel/limited-pool": "^1.0",
                 "react-parallel/runtime": "^2.0",
                 "react-parallel/streams": "^1.0",
                 "react/event-loop": "^1.1",
                 "react/promise": "^2.8",
                 "wyrihaximus/constants": "^1.5",
-                "wyrihaximus/metrics": "dev-master"
+                "wyrihaximus/metrics": "^1"
             },
             "require-dev": {
+                "ancarda/psr7-string-stream": "^1.3",
                 "moneyphp/money": "^3.3",
                 "ocramius/package-versions": "^1.9",
-                "wyrihaximus/async-test-utilities": "^2.2",
+                "react/http": "^1.1",
+                "wyrihaximus/async-test-utilities": "^3.2",
                 "wyrihaximus/iterator-or-array-to-array": "^1.1"
             },
             "type": "library",
@@ -2794,7 +2795,7 @@
             "description": "🌉 Bridging ext-parallel and ReactPHP",
             "support": {
                 "issues": "https://github.com/reactphp-parallel/reactphp-parallel/issues",
-                "source": "https://github.com/reactphp-parallel/reactphp-parallel/tree/add-metrics"
+                "source": "https://github.com/reactphp-parallel/reactphp-parallel/tree/1.1.0"
             },
             "funding": [
                 {
@@ -2802,7 +2803,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-23T10:01:06+00:00"
+            "time": "2020-11-20T00:07:02+00:00"
         },
         {
             "name": "react-parallel/runtime",
@@ -4338,16 +4339,16 @@
         },
         {
             "name": "wyrihaximus/metrics",
-            "version": "dev-master",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-metrics.git",
-                "reference": "58ca901b2e05b1806a3d0fec01df4ae331a48891"
+                "reference": "cdf8ee62b5fa6b253ec8823070ea112671757f9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-metrics/zipball/58ca901b2e05b1806a3d0fec01df4ae331a48891",
-                "reference": "58ca901b2e05b1806a3d0fec01df4ae331a48891",
+                "url": "https://api.github.com/repos/WyriHaximus/php-metrics/zipball/cdf8ee62b5fa6b253ec8823070ea112671757f9a",
+                "reference": "cdf8ee62b5fa6b253ec8823070ea112671757f9a",
                 "shasum": ""
             },
             "require": {
@@ -4359,9 +4360,8 @@
             },
             "require-dev": {
                 "phpbench/phpbench": "^0.17.1",
-                "wyrihaximus/test-utilities": "^2.5"
+                "wyrihaximus/test-utilities": "^2.5 || ^3.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -4378,10 +4378,10 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "description": "🕵️‍♀️ Pure metric VO's and registry",
+            "description": "🕵️‍♀️ Prometheus modelled metric VO's and registry",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-metrics/issues",
-                "source": "https://github.com/WyriHaximus/php-metrics/tree/master"
+                "source": "https://github.com/WyriHaximus/php-metrics/tree/1.0.2"
             },
             "funding": [
                 {
@@ -4389,33 +4389,32 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-03T20:34:36+00:00"
+            "time": "2020-11-17T22:53:16+00:00"
         },
         {
             "name": "wyrihaximus/metrics-tactician",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-metrics-tactician.git",
-                "reference": "e5ac650561f7a4b054745c8f14a709fc791f20c4"
+                "reference": "6cc69236e9d3f8f5f40ffa38c6e7a699f4901286"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-metrics-tactician/zipball/e5ac650561f7a4b054745c8f14a709fc791f20c4",
-                "reference": "e5ac650561f7a4b054745c8f14a709fc791f20c4",
+                "url": "https://api.github.com/repos/WyriHaximus/php-metrics-tactician/zipball/6cc69236e9d3f8f5f40ffa38c6e7a699f4901286",
+                "reference": "6cc69236e9d3f8f5f40ffa38c6e7a699f4901286",
                 "shasum": ""
             },
             "require": {
                 "league/tactician": "^1.0",
                 "php": "^7.4",
-                "wyrihaximus/metrics": "dev-master"
+                "wyrihaximus/metrics": "^1.0"
             },
             "require-dev": {
                 "phpbench/phpbench": "^0.17.1",
                 "thecodingmachine/safe": "^1.2",
-                "wyrihaximus/test-utilities": "^2.5"
+                "wyrihaximus/test-utilities": "^2.5 || ^3.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -4435,7 +4434,7 @@
             "description": "Metric collection for Tactician",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-metrics-tactician/issues",
-                "source": "https://github.com/WyriHaximus/php-metrics-tactician/tree/master"
+                "source": "https://github.com/WyriHaximus/php-metrics-tactician/tree/1.0.0"
             },
             "funding": [
                 {
@@ -4443,7 +4442,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-03T12:25:19+00:00"
+            "time": "2020-11-15T21:51:54+00:00"
         },
         {
             "name": "wyrihaximus/monolog-factory",
@@ -5342,16 +5341,16 @@
         },
         {
             "name": "composer/package-versions-deprecated",
-            "version": "1.11.99",
+            "version": "1.11.99.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/package-versions-deprecated.git",
-                "reference": "c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855"
+                "reference": "7413f0b55a051e89485c5cb9f765fe24bb02a7b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855",
-                "reference": "c8c9aa8a14cc3d3bec86d0a8c3fa52ea79936855",
+                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/7413f0b55a051e89485c5cb9f765fe24bb02a7b6",
+                "reference": "7413f0b55a051e89485c5cb9f765fe24bb02a7b6",
                 "shasum": ""
             },
             "require": {
@@ -5395,7 +5394,7 @@
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
             "support": {
                 "issues": "https://github.com/composer/package-versions-deprecated/issues",
-                "source": "https://github.com/composer/package-versions-deprecated/tree/master"
+                "source": "https://github.com/composer/package-versions-deprecated/tree/1.11.99.1"
             },
             "funding": [
                 {
@@ -5411,7 +5410,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-25T05:50:16+00:00"
+            "time": "2020-11-11T10:22:58+00:00"
         },
         {
             "name": "composer/semver",
@@ -5574,16 +5573,16 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "1.4.4",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "6e076a124f7ee146f2487554a94b6a19a74887ba"
+                "reference": "f28d44c286812c714741478d968104c5e604a1d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/6e076a124f7ee146f2487554a94b6a19a74887ba",
-                "reference": "6e076a124f7ee146f2487554a94b6a19a74887ba",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/f28d44c286812c714741478d968104c5e604a1d4",
+                "reference": "f28d44c286812c714741478d968104c5e604a1d4",
                 "shasum": ""
             },
             "require": {
@@ -5617,7 +5616,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/xdebug-handler/issues",
-                "source": "https://github.com/composer/xdebug-handler/tree/1.4.4"
+                "source": "https://github.com/composer/xdebug-handler/tree/1.4.5"
             },
             "funding": [
                 {
@@ -5633,7 +5632,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-24T12:39:10+00:00"
+            "time": "2020-11-13T08:04:11+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -5799,36 +5798,31 @@
         },
         {
             "name": "doctrine/instantiator",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/instantiator.git",
-                "reference": "f350df0268e904597e3bd9c4685c53e0e333feea"
+                "reference": "d56bf6102915de5702778fe20f2de3b2fe570b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/f350df0268e904597e3bd9c4685c53e0e333feea",
-                "reference": "f350df0268e904597e3bd9c4685c53e0e333feea",
+                "url": "https://api.github.com/repos/doctrine/instantiator/zipball/d56bf6102915de5702778fe20f2de3b2fe570b5b",
+                "reference": "d56bf6102915de5702778fe20f2de3b2fe570b5b",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^6.0",
+                "doctrine/coding-standard": "^8.0",
                 "ext-pdo": "*",
                 "ext-phar": "*",
-                "phpbench/phpbench": "^0.13",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpstan/phpstan-shim": "^0.11",
-                "phpunit/phpunit": "^7.0"
+                "phpbench/phpbench": "^0.13 || 1.0.0-alpha2",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Doctrine\\Instantiator\\": "src/Doctrine/Instantiator/"
@@ -5842,7 +5836,7 @@
                 {
                     "name": "Marco Pivetta",
                     "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.com/"
+                    "homepage": "https://ocramius.github.io/"
                 }
             ],
             "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
@@ -5853,7 +5847,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/instantiator/issues",
-                "source": "https://github.com/doctrine/instantiator/tree/1.3.x"
+                "source": "https://github.com/doctrine/instantiator/tree/1.4.0"
             },
             "funding": [
                 {
@@ -5869,7 +5863,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-29T17:27:14+00:00"
+            "time": "2020-11-10T18:47:58+00:00"
         },
         {
             "name": "ergebnis/composer-normalize",
@@ -7269,16 +7263,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.10.1",
+            "version": "1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5"
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
-                "reference": "969b211f9a51aa1f6c01d1d2aef56d3bd91598e5",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/776f831124e9c62e1a2c601ecc52e776d8bb7220",
+                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220",
                 "shasum": ""
             },
             "require": {
@@ -7315,7 +7309,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.x"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.2"
             },
             "funding": [
                 {
@@ -7323,7 +7317,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-29T13:22:24+00:00"
+            "time": "2020-11-13T09:40:50+00:00"
         },
         {
             "name": "netresearch/jsonmapper",
@@ -8232,16 +8226,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.54",
+            "version": "0.12.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "45c7b999a4b7dd9ac5558bdaaf23dcebbef88223"
+                "reference": "f9909d1d0c44b4cbaf72babcf80e8f14d6fdd55b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/45c7b999a4b7dd9ac5558bdaaf23dcebbef88223",
-                "reference": "45c7b999a4b7dd9ac5558bdaaf23dcebbef88223",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f9909d1d0c44b4cbaf72babcf80e8f14d6fdd55b",
+                "reference": "f9909d1d0c44b4cbaf72babcf80e8f14d6fdd55b",
                 "shasum": ""
             },
             "require": {
@@ -8272,7 +8266,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.54"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.57"
             },
             "funding": [
                 {
@@ -8288,7 +8282,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-05T13:36:26+00:00"
+            "time": "2020-11-21T12:53:28+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -8836,16 +8830,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.4.2",
+            "version": "9.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3866b2eeeed21b1b099c4bc0b7a1690ac6fd5baa"
+                "reference": "9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3866b2eeeed21b1b099c4bc0b7a1690ac6fd5baa",
-                "reference": "3866b2eeeed21b1b099c4bc0b7a1690ac6fd5baa",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
+                "reference": "9fa359ff5ddaa5eb2be2bedb08a6a5787a5807ab",
                 "shasum": ""
             },
             "require": {
@@ -8923,7 +8917,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.4.2"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.4.3"
             },
             "funding": [
                 {
@@ -8935,7 +8929,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-19T09:23:29+00:00"
+            "time": "2020-11-10T12:53:30+00:00"
         },
         {
             "name": "psalm/plugin-phpunit",
@@ -10287,16 +10281,16 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.8.2",
+            "version": "1.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "590cfec960b77fd55e39b7d9246659e95dd6d337"
+                "reference": "9ad6ce79c342fbd44df10ea95511a1b24dee5b57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/590cfec960b77fd55e39b7d9246659e95dd6d337",
-                "reference": "590cfec960b77fd55e39b7d9246659e95dd6d337",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/9ad6ce79c342fbd44df10ea95511a1b24dee5b57",
+                "reference": "9ad6ce79c342fbd44df10ea95511a1b24dee5b57",
                 "shasum": ""
             },
             "require": {
@@ -10334,7 +10328,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/jsonlint/issues",
-                "source": "https://github.com/Seldaek/jsonlint/tree/master"
+                "source": "https://github.com/Seldaek/jsonlint/tree/1.8.3"
             },
             "funding": [
                 {
@@ -10346,7 +10340,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-25T06:56:57+00:00"
+            "time": "2020-11-11T09:19:24+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -12182,29 +12176,13 @@
             "time": "2020-10-20T00:01:40+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "react-parallel/react-parallel",
-            "version": "dev-add-metrics",
-            "alias": "1.1.1",
-            "alias_normalized": "1.1.1.0"
-        },
-        {
-            "package": "react-parallel/event-loop",
-            "version": "dev-add-metrics",
-            "alias": "1.1.1",
-            "alias_normalized": "1.1.1.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "mammatus/life-cycle-events": 20,
         "mammatus/metrics": 20,
         "php-di-definitions/react-event-loop-inspected": 20,
-        "react-parallel/event-loop": 20,
-        "react-parallel/react-parallel": 20,
         "wyrihaximus/broadcast": 20,
-        "wyrihaximus/metrics": 20,
         "mammatus/test-app": 20
     },
     "prefer-stable": true,
