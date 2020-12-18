@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65872a33e53c624bdc3f406f83ba5164",
+    "content-hash": "529906f0efacda5511af77af135c309d",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -3959,22 +3959,22 @@
         },
         {
             "name": "wyrihaximus/broadcast",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-broadcast.git",
-                "reference": "7175b41edcdd273228cb85eb13424b9cf29afbfa"
+                "reference": "6193f55d0f27952e381a24d9cd4f4cfd2b80d1ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-broadcast/zipball/7175b41edcdd273228cb85eb13424b9cf29afbfa",
-                "reference": "7175b41edcdd273228cb85eb13424b9cf29afbfa",
+                "url": "https://api.github.com/repos/WyriHaximus/php-broadcast/zipball/6193f55d0f27952e381a24d9cd4f4cfd2b80d1ea",
+                "reference": "6193f55d0f27952e381a24d9cd4f4cfd2b80d1ea",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2",
                 "illuminate/collections": "^8.11",
-                "php": "^7.4",
+                "php": "^8 || ^7.4",
                 "pimple/pimple": "^3.3",
                 "psr/event-dispatcher": "^1",
                 "psr/log": "^1.1",
@@ -3990,9 +3990,8 @@
             "require-dev": {
                 "psr/container": "^1",
                 "the-orville/exceptions": "dev-master",
-                "wyrihaximus/test-utilities": "^2.9"
+                "wyrihaximus/test-utilities": "^2.9 || ^3.0"
             },
-            "default-branch": true,
             "type": "composer-plugin",
             "extra": {
                 "class": "WyriHaximus\\Broadcast\\Composer\\Installer",
@@ -4018,7 +4017,7 @@
             "description": "✨ Statically on composer install/update compiled event dispatcher",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-broadcast/issues",
-                "source": "https://github.com/WyriHaximus/php-broadcast/tree/master"
+                "source": "https://github.com/WyriHaximus/php-broadcast/tree/1.0.0"
             },
             "funding": [
                 {
@@ -4026,7 +4025,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T10:15:28+00:00"
+            "time": "2020-12-17T23:38:52+00:00"
         },
         {
             "name": "wyrihaximus/broadcast-contracts",
@@ -12182,7 +12181,6 @@
         "mammatus/life-cycle-events": 20,
         "mammatus/metrics": 20,
         "php-di-definitions/react-event-loop-inspected": 20,
-        "wyrihaximus/broadcast": 20,
         "mammatus/test-app": 20
     },
     "prefer-stable": true,
