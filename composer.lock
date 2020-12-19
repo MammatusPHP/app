@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "529906f0efacda5511af77af135c309d",
+    "content-hash": "179ac62096a153e42b1348cfb5b7ef2a",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -883,16 +883,16 @@
         },
         {
             "name": "mammatus/life-cycle-events",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MammatusPHP/life-cycle-events.git",
-                "reference": "1afa2adb3985e1673b82489a4690be9ddc54caab"
+                "reference": "eea9596de479e0501b33ac7d76d0c563d0a3e018"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MammatusPHP/life-cycle-events/zipball/1afa2adb3985e1673b82489a4690be9ddc54caab",
-                "reference": "1afa2adb3985e1673b82489a4690be9ddc54caab",
+                "url": "https://api.github.com/repos/MammatusPHP/life-cycle-events/zipball/eea9596de479e0501b33ac7d76d0c563d0a3e018",
+                "reference": "eea9596de479e0501b33ac7d76d0c563d0a3e018",
                 "shasum": ""
             },
             "require": {
@@ -901,10 +901,9 @@
                 "wyrihaximus/constants": "^1.5"
             },
             "require-dev": {
-                "wyrihaximus/broadcast": "dev-master",
-                "wyrihaximus/test-utilities": "^2.2"
+                "wyrihaximus/broadcast": "^1.0",
+                "wyrihaximus/test-utilities": "^3.3"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -918,7 +917,7 @@
             "description": "♻️ Life Cycle Events for MammatusPHP Applications",
             "support": {
                 "issues": "https://github.com/MammatusPHP/life-cycle-events/issues",
-                "source": "https://github.com/MammatusPHP/life-cycle-events/tree/master"
+                "source": "https://github.com/MammatusPHP/life-cycle-events/tree/1.0.0"
             },
             "funding": [
                 {
@@ -926,7 +925,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-04-04T18:56:44+00:00"
+            "time": "2020-12-18T17:14:06+00:00"
         },
         {
             "name": "mammatus/metrics",
@@ -4119,20 +4118,20 @@
         },
         {
             "name": "wyrihaximus/constants",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-constants.git",
-                "reference": "a2202b683261f8119f3772eb1e3469a2b5c4d9eb"
+                "reference": "32ceffdd881593c7fa24d8fcbf9deb58687484cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-constants/zipball/a2202b683261f8119f3772eb1e3469a2b5c4d9eb",
-                "reference": "a2202b683261f8119f3772eb1e3469a2b5c4d9eb",
+                "url": "https://api.github.com/repos/WyriHaximus/php-constants/zipball/32ceffdd881593c7fa24d8fcbf9deb58687484cb",
+                "reference": "32ceffdd881593c7fa24d8fcbf9deb58687484cb",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0 || ^5.3"
+                "php": "^8 || ^7 || ^5.3"
             },
             "type": "library",
             "autoload": {
@@ -4157,9 +4156,15 @@
             "description": "Collection of constants for PHP",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-constants/issues",
-                "source": "https://github.com/WyriHaximus/php-constants/tree/master"
+                "source": "https://github.com/WyriHaximus/php-constants/tree/1.6.0"
             },
-            "time": "2020-04-02T21:00:04+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-28T12:04:43+00:00"
         },
         {
             "name": "wyrihaximus/doctrine-annotation-autoloader",
@@ -12178,7 +12183,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "mammatus/life-cycle-events": 20,
         "mammatus/metrics": 20,
         "php-di-definitions/react-event-loop-inspected": 20,
         "mammatus/test-app": 20
