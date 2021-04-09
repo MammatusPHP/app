@@ -9,7 +9,6 @@
         "clue/block-react": "^1.3",
         "doctrine/annotations": "^1.4",
         "mammatus/life-cycle-events": "^1.0",
-        "mammatus/metrics": "dev-master",
         "monolog/monolog": "^2.0",
         "php-di-definitions/definitions-gatherer": "^1",
         "php-di-definitions/react-event-loop-inspected": "dev-master",
@@ -18,6 +17,10 @@
         "psr/container": "^1",
         "psr/event-dispatcher": "^1",
         "psr/log": "^1.1",
+        "react-parallel/event-loop": "^1.1",
+        "react-parallel/object-proxy": "dev-master",
+        "react-parallel/psr-11-container-proxy": "dev-master",
+        "react-parallel/react-parallel": "^1.1",
         "react/event-loop": "^1",
         "thecodingmachine/safe": "^1.3",
         "wyrihaximus/broadcast": "^1.0",
@@ -26,9 +29,12 @@
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
         "wyrihaximus/get-in-packages-composer.jason": "^1.0",
+        "wyrihaximus/metrics": "^1.0",
+        "wyrihaximus/metrics-lazy-registry": "^1.0",
+        "wyrihaximus/metrics-tactician": "^1.0",
         "wyrihaximus/monolog-factory": "^1.0",
-        "wyrihaximus/psr-3-context-logger": "^1.0",
-        "wyrihaximus/react-psr-3-stdio": "^2.0"
+        "wyrihaximus/psr-3-callable-throwable-logger": "^2.1",
+        "wyrihaximus/psr-3-context-logger": "^1.0"
     },
     "require-dev": {
         "mammatus/test-app": "dev-master",
