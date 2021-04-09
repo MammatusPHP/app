@@ -8,6 +8,7 @@ use Psr\Log\LoggerInterface;
 use ReactParallel\ObjectProxy\Proxy;
 use WyriHaximus\Monolog\Factory;
 
+use WyriHaximus\PSR3\CallableThrowableLogger\CallableThrowableLogger;
 use function DI\env;
 use function DI\factory;
 
@@ -16,7 +17,7 @@ return (static fn (): array => [
         Proxy $proxy,
         string $version
     ): LoggerInterface {
-        return $proxy->thread(
+        $logger = $proxy->thread(
             Factory::create(
                 '',
                 new Logger('', [new StreamHandler('php://stdout')]),
@@ -24,6 +25,10 @@ return (static fn (): array => [
             ),
             LoggerInterface::class
         );
+
+        $proxy->on('error', CallableThrowableLogger::create($logger));
+
+        return $logger;
     })->
         parameter('version', env('APP_VERSION', 'dev-' . time())),
 ])();
