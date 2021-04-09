@@ -1,10 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Mammatus;
 
 use function Safe\glob;
 use function strpos;
 use function WyriHaximus\get_in_packages_composer_path;
+
 use const WyriHaximus\Constants\Boolean\FALSE_;
 use const WyriHaximus\Constants\Boolean\TRUE_;
 

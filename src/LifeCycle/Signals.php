@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Mammatus\LifeCycle;
 
@@ -9,6 +11,7 @@ use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
 use WyriHaximus\Broadcast\Contracts\Listener;
 use WyriHaximus\PSR3\ContextLogger\ContextLogger;
+
 use const SIGINT;
 use const SIGTERM;
 

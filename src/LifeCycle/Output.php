@@ -1,10 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Mammatus\LifeCycle;
 
 use Mammatus\LifeCycleEvents\Initialize;
 use React\EventLoop\LoopInterface;
 use WyriHaximus\Broadcast\Contracts\Listener;
+
 use const STDERR;
 use const STDIN;
 use const STDOUT;

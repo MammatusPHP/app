@@ -1,11 +1,15 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Mammatus;
 
 use DI\ContainerBuilder;
 use PHPDIDefinitions\DefinitionsGatherer;
 use Psr\Container\ContainerInterface;
+
 use function iterator_to_array;
+
 use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class ContainerFactory
@@ -17,7 +21,8 @@ final class ContainerFactory
         foreach ($overrides as $key => $value) {
             $definitions[$key] = $value;
         }
-        $container   = new ContainerBuilder();
+
+        $container = new ContainerBuilder();
         $container->useAnnotations(TRUE_);
         foreach (ConfigurationLocator::locate() as $key => $value) {
             $definitions['config.' . $key] = $value;
