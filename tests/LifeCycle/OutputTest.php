@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Mammatus\Tests\LifeCycle;
 
@@ -7,6 +9,7 @@ use Mammatus\LifeCycleEvents\Initialize;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use React\EventLoop\LoopInterface;
+
 use const STDERR;
 use const STDIN;
 use const STDOUT;

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Mammatus\Tests\LifeCycle;
 
@@ -10,6 +12,7 @@ use Prophecy\Argument;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
+
 use const SIGINT;
 
 /**
