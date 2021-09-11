@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cca069903022c3ba0d1f1ce36d8faeea",
+    "content-hash": "0d306fcd048f4c1ce09784b9f44ac433",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -2634,7 +2634,7 @@
                 "wyrihaximus/json-throwable": "^4.1",
                 "wyrihaximus/metrics": "^1.0.2",
                 "wyrihaximus/metrics-lazy-registry": "^1.0",
-                "wyrihaximus/react-mutex-contracts": "^1.0",
+                "wyrihaximus/react-mutex-contracts": "^1.0 || ^2.0",
                 "wyrihaximus/string-get-in": "^1.0"
             },
             "require-dev": {
@@ -2774,9 +2774,12 @@
                 "shasum": ""
             },
             "require": {
+                "composer-plugin-api": "^2",
+                "illuminate/collections": "^8.18",
                 "php": "^7.4",
                 "psr/container": "^1.0",
-                "react-parallel/object-proxy": "dev-master"
+                "react-parallel/object-proxy": "dev-master",
+                "wyrihaximus/string-get-in": "^1.0"
             },
             "require-dev": {
                 "monolog/monolog": "^2.1",
@@ -2785,12 +2788,18 @@
                 "yuloh/container": "^1.0"
             },
             "default-branch": true,
-            "type": "library",
+            "type": "composer-plugin",
             "extra": {
+                "class": "ReactParallel\\Psr11ContainerProxy\\Composer\\Installer",
                 "react-parallel": {
                     "object-proxy": {
                         "interfaces-to-proxy": [
                             "Psr\\Container\\ContainerInterface"
+                        ]
+                    },
+                    "psr-11-container-proxy": {
+                        "custom-overrides": [
+                            "react-parallel.psr-11-container-proxy.dummy"
                         ]
                     }
                 }
@@ -10416,6 +10425,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {
@@ -12440,12 +12450,12 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4",
-        "ext-pcntl": "^7.4"
+        "php": "^8 || ^7.4",
+        "ext-pcntl": "^8 || ^7.4"
     },
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.4.7"
     },
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
