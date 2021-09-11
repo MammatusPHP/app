@@ -3,8 +3,8 @@
     "description": "\ud83d\ude82 Main entry point for all MammatusPHP applications",
     "license": "MIT",
     "require": {
-        "php": "^7.4",
-        "ext-pcntl": "^7.4",
+        "php": "^8 || ^7.4",
+        "ext-pcntl": "^8 || ^7.4",
         "bramus/monolog-colored-line-formatter": "^3.0",
         "clue/block-react": "^1.3",
         "doctrine/annotations": "^1.4",
