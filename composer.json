@@ -95,21 +95,6 @@
             }
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Mammatus\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Mammatus\\Tests\\": "tests"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "bin": [
-        "bin/mammatus"
-    ],
     "scripts": {
         "post-install-cmd": [
             "composer normalize"
