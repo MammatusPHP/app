@@ -22,7 +22,7 @@
         "wyrihaximus/composer-update-bin-autoload-path": "^1 || ^1.0.1",
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
-        "wyrihaximus/get-in-packages-composer.jason": "^1.0",
+        "wyrihaximus/get-in-packages-composer.jason": "^2.0",
         "wyrihaximus/metrics": "^1.0",
         "wyrihaximus/metrics-tactician": "^1.0",
         "wyrihaximus/monolog-factory": "^1.0",
@@ -50,12 +50,14 @@
     ],
     "config": {
         "allow-plugins": {
-            "infection/extension-installer": true,
-            "wyrihaximus/composer-update-bin-autoload-path": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "wyrihaximus/broadcast": true,
+            "drupol/composer-packages": true,
             "ergebnis/composer-normalize": true,
-            "icanhazstring/composer-unused": true
+            "icanhazstring/composer-unused": true,
+            "infection/extension-installer": true,
+            "mindplay/composer-locator": true,
+            "wyrihaximus/broadcast": true,
+            "wyrihaximus/composer-update-bin-autoload-path": true
         },
         "platform": {
             "php": "8.1.0"
