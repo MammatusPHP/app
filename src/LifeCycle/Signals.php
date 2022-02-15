@@ -8,7 +8,7 @@ use Mammatus\LifeCycleEvents\Initialize;
 use Mammatus\LifeCycleEvents\Shutdown;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
-use React\EventLoop\LoopInterface;
+use React\EventLoop\Loop;
 use WyriHaximus\Broadcast\Contracts\Listener;
 use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 
@@ -24,18 +24,15 @@ final class Signals implements Listener
 
     private LoggerInterface $logger;
 
-    private LoopInterface $loop;
-
     private EventDispatcherInterface $eventDispatcher;
 
-    public function __construct(LoggerInterface $logger, LoopInterface $loop, EventDispatcherInterface $eventDispatcher)
+    public function __construct(LoggerInterface $logger, EventDispatcherInterface $eventDispatcher)
     {
         $this->logger          = new ContextLogger(
             $logger,
             ['listener' => 'signals'],
             'signals'
         );
-        $this->loop            = $loop;
         $this->eventDispatcher = $eventDispatcher;
     }
 
@@ -55,13 +52,13 @@ final class Signals implements Listener
             $this->logger->notice('Shutdown issued');
 
             foreach (self::SIGNALS as $signal => $signalName) {
-                $this->loop->removeSignal($signal, $handler);
+                Loop::removeSignal($signal, $handler);
                 $this->logger->debug('Removed signal listener', ['signal' => $signalName]);
             }
         };
 
         foreach (self::SIGNALS as $signal => $signalName) {
-            $this->loop->addSignal($signal, $handler);
+            Loop::addSignal($signal, $handler);
             $this->logger->debug('Added signal listener', ['signal' => $signalName]);
         }
     }
