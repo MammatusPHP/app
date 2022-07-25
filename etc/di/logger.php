@@ -14,7 +14,6 @@ use function DI\get;
 use const WyriHaximus\Constants\Boolean\TRUE_;
 
 return (static fn (): array => [
-    'mamatus.logger.handlers' => [],
     LoggerInterface::class => factory(static function (Logger $logger): LoggerInterface {
         return $logger;
     }),
@@ -39,5 +38,5 @@ return (static fn (): array => [
         parameter('version', env('APP_VERSION', 'dev-' . time()))->
         parameter('k8sPodName', env('K8S_POD_NAME'))->
         parameter('k8sNamespace', env('K8S_NAMESPACE'))->
-        parameter('handlers', get('mamatus.logger.handlers')),
+        parameter('handlers', get('mammatus.logger.handlers')),
 ])();
