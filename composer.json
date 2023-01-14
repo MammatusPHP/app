@@ -23,7 +23,7 @@
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
         "wyrihaximus/get-in-packages-composer.jason": "^2.0",
-        "wyrihaximus/metrics": "^1.0",
+        "wyrihaximus/metrics": "^2 || ^1.0",
         "wyrihaximus/metrics-tactician": "^1.0",
         "wyrihaximus/monolog-factory": "^1.0",
         "wyrihaximus/psr-3-context-logger": "^2",
