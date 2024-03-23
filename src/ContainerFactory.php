@@ -14,16 +14,19 @@ use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class ContainerFactory
 {
+    /** @param array<string, mixed> $overrides */
     public static function create(array $overrides = []): ContainerInterface
     {
         /** @psalm-suppress InvalidArgument */
         $definitions = iterator_to_array(DefinitionsGatherer::gather());
+        /** @psalm-suppress MixedAssignment */
         foreach ($overrides as $key => $value) {
+            /** @psalm-suppress MixedAssignment */
             $definitions[$key] = $value;
         }
 
         $container = new ContainerBuilder();
-        $container->useAnnotations(TRUE_);
+        $container->useAttributes(TRUE_);
         foreach (ConfigurationLocator::locate() as $key => $value) {
             $definitions['config.' . $key] = $value;
         }

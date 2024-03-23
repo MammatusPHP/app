@@ -1,12 +1,15 @@
 {
-    "timeout": 120,
+    "timeout": 300,
     "source": {
         "directories": [
             "src"
         ]
     },
     "logs": {
-        "text": "infection-log.txt"
+        "text": "./var/infection.log",
+        "summary": "./var/infection-summary.log",
+        "json": "./var/infection.json",
+        "perMutator": "./var/infection-per-mutator.md"
     },
     "mutators": {
         "@default": true,
@@ -16,5 +19,8 @@
                 "Mammatus\\ContainerFactory::create"
             ]
         }
+    },
+    "phpUnit": {
+        "configDir": "./etc/qa/"
     }
 }

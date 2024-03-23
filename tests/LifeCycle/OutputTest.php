@@ -6,25 +6,23 @@ namespace Mammatus\Tests\LifeCycle;
 
 use Mammatus\LifeCycle\Output;
 use Mammatus\LifeCycleEvents\Initialize;
-use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
+use WyriHaximus\TestUtilities\TestCase;
 
 use const STDERR;
 use const STDIN;
 use const STDOUT;
 
-/**
- * @internal
- */
+/** @internal */
 final class OutputTest extends TestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function runThrough(): void
     {
         $loop = $this->prophesize(LoopInterface::class);
+        Loop::set($loop->reveal());
         $loop->addTimer(Argument::type('float'), Argument::that(static function (callable $listener): bool {
             $listener();
 
@@ -34,6 +32,6 @@ final class OutputTest extends TestCase
         $loop->removeWriteStream(STDOUT)->shouldBeCalled();
         $loop->removeWriteStream(STDERR)->shouldBeCalled();
 
-        (new Output($loop->reveal()))->handle(new Initialize());
+        (new Output())->handle(new Initialize());
     }
 }

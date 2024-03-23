@@ -8,23 +8,20 @@ use Mammatus\App;
 use Mammatus\ExitCode;
 use Mammatus\LifeCycleEvents\Boot;
 use Mammatus\LifeCycleEvents\Initialize;
-use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
+use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
+use WyriHaximus\TestUtilities\TestCase;
 
-/**
- * @internal
- */
 final class AppTest extends TestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function runThrough(): void
     {
         $loop = $this->prophesize(LoopInterface::class);
+        Loop::set($loop->reveal());
         $loop->futureTick(Argument::that(static function (callable $listener): bool {
             $listener();
 
@@ -36,7 +33,7 @@ final class AppTest extends TestCase
         $eventDispatcher->dispatch(Argument::type(Boot::class))->shouldBeCalled();
         $logger = $this->prophesize(LoggerInterface::class);
         $logger->log(Argument::type('string'), Argument::type('string'), Argument::type('array'))->shouldBeCalledTimes(6);
-        $app = new App($loop->reveal(), $eventDispatcher->reveal(), $logger->reveal());
+        $app = new App($eventDispatcher->reveal(), $logger->reveal());
         self::assertSame(ExitCode::SUCCESS, $app->boot());
         self::assertSame(ExitCode::FAILURE, $app->boot());
     }

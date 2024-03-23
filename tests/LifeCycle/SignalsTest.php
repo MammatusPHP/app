@@ -7,22 +7,19 @@ namespace Mammatus\Tests\LifeCycle;
 use Mammatus\LifeCycle\Signals;
 use Mammatus\LifeCycleEvents\Initialize;
 use Mammatus\LifeCycleEvents\Shutdown;
-use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
+use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
+use WyriHaximus\TestUtilities\TestCase;
 
 use const SIGINT;
 
-/**
- * @internal
- */
+/** @internal */
 final class SignalsTest extends TestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function runThrough(): void
     {
         $logger = $this->prophesize(LoggerInterface::class);
@@ -30,6 +27,7 @@ final class SignalsTest extends TestCase
         $logger->log('debug', '[signals] Caught', ['listener' => 'signals', 'signal' => 'SIGINT'])->shouldBeCalledTimes(2);
 
         $loop = $this->prophesize(LoopInterface::class);
+        Loop::set($loop->reveal());
         $loop->addSignal(Argument::type('int'), Argument::that(static function (callable $listener): bool {
             $listener(SIGINT);
 
@@ -40,6 +38,6 @@ final class SignalsTest extends TestCase
         $eventDispatcher = $this->prophesize(EventDispatcherInterface::class);
         $eventDispatcher->dispatch(Argument::type(Shutdown::class))->shouldBeCalled();
 
-        (new Signals($logger->reveal(), $loop->reveal(), $eventDispatcher->reveal()))->handle(new Initialize());
+        (new Signals($logger->reveal(), $eventDispatcher->reveal()))->handle(new Initialize());
     }
 }

@@ -24,16 +24,13 @@ final class Signals implements Listener
 
     private LoggerInterface $logger;
 
-    private EventDispatcherInterface $eventDispatcher;
-
-    public function __construct(LoggerInterface $logger, EventDispatcherInterface $eventDispatcher)
+    public function __construct(LoggerInterface $logger, private EventDispatcherInterface $eventDispatcher)
     {
-        $this->logger          = new ContextLogger(
+        $this->logger = new ContextLogger(
             $logger,
             ['listener' => 'signals'],
-            'signals'
+            'signals',
         );
-        $this->eventDispatcher = $eventDispatcher;
     }
 
     public function handle(Initialize $event): void
