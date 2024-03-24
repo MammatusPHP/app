@@ -22,7 +22,7 @@ final class Output implements Listener
     public function __invoke(): void
     {
         // Remove STD* streams from loop on shutdown
-        Loop::addTimer(4.9, function (): void {
+        Loop::addTimer(4.9, static function (): void {
             Loop::removeReadStream(STDIN);
             Loop::removeWriteStream(STDOUT);
             Loop::removeWriteStream(STDERR);

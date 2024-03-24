@@ -13,18 +13,16 @@ use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class ConfigurationLocator
 {
-    /**
-     * @return iterable<string, object>
-     */
+    /** @return iterable<string, string> */
     public static function locate(): iterable
     {
         yield from self::requires(get_in_packages_composer_path('extra.mammatus.config', TRUE_));
     }
 
     /**
-     * @param iterable<array-key, string> $files
+     * @param iterable<string> $files
      *
-     * @return iterable<string, object>
+     * @return iterable<string, string>
      */
     private static function requires(iterable $files): iterable
     {
@@ -33,9 +31,7 @@ final class ConfigurationLocator
         }
     }
 
-    /**
-     * @return iterable<string, object>
-     */
+    /** @return iterable<string, string> */
     private static function require(string $file): iterable
     {
         if (strpos($file, '*') !== FALSE_) {

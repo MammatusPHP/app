@@ -16,16 +16,13 @@ use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class App
 {
-    private EventDispatcherInterface $eventDispatcher;
-
     private LoggerInterface $logger;
 
     private bool $booted = FALSE_;
 
-    public function __construct(EventDispatcherInterface $eventDispatcher, LoggerInterface $logger)
+    public function __construct(private EventDispatcherInterface $eventDispatcher, LoggerInterface $logger)
     {
-        $this->eventDispatcher = $eventDispatcher;
-        $this->logger          = new ContextLogger($logger, [], 'app');
+        $this->logger = new ContextLogger($logger, [], 'app');
     }
 
     public function boot(): int

@@ -11,9 +11,7 @@ use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use WyriHaximus\Broadcast\ContainerListenerProvider;
 
-/**
- * @internal
- */
+/** @internal */
 final class ContainerFactoryTest extends TestCase
 {
     public function testConfig(): void
