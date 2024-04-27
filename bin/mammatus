@@ -4,14 +4,14 @@
 use Mammatus\App;
 use Mammatus\ContainerFactory;
 
-(function() {
+(static function(string $_composer_autoload_path): void {
     /**
      * Require Composer's autoloader
      */
     require_once $_composer_autoload_path;
-})();
+})($_composer_autoload_path);
 
-(function() {
+(static function(): void {
     /**
      * Create and boot up the application
      */
