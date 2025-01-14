@@ -10,4 +10,6 @@
     <file>../../tests</file>
 
     <rule ref="WyriHaximus-OSS" />
+
+    <exclude name="Generic.NamingConventions.ConstructorName"/>
 </ruleset>

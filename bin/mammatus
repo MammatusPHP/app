@@ -2,7 +2,8 @@
 <?php declare(strict_types=1);
 
 use Mammatus\App;
-use Mammatus\ContainerFactory;
+use Mammatus\Boot;
+use Mammatus\Contracts\Argv;
 
 (static function(string $_composer_autoload_path): void {
     /**
@@ -15,7 +16,5 @@ use Mammatus\ContainerFactory;
     /**
      * Create and boot up the application
      */
-    exit((function (): int {
-        return ContainerFactory::create()->get(App::class)->boot();
-    })());
+    exit(Boot::boot(App::class, new App\Nothing())->value);
 })();
