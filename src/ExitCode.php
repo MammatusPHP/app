@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Mammatus;
 
-final class ExitCode
+enum ExitCode: int
 {
-    public const SUCCESS = 0;
-    public const FAILURE = 1;
+    case Success            = 0;
+    case Failure            = 1;
+    case ContingencyFailure = 2;
 }

@@ -8,6 +8,7 @@ use Mammatus\App;
 use Mammatus\ExitCode;
 use Mammatus\LifeCycleEvents\Boot;
 use Mammatus\LifeCycleEvents\Initialize;
+use Mammatus\Run;
 use Prophecy\Argument;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
@@ -33,8 +34,8 @@ final class AppTest extends TestCase
         $eventDispatcher->dispatch(Argument::type(Boot::class))->shouldBeCalled();
         $logger = $this->prophesize(LoggerInterface::class);
         $logger->log(Argument::type('string'), Argument::type('string'), Argument::type('array'))->shouldBeCalledTimes(6);
-        $app = new App($eventDispatcher->reveal(), $logger->reveal());
-        self::assertSame(ExitCode::SUCCESS, $app->boot());
-        self::assertSame(ExitCode::FAILURE, $app->boot());
+        $app = new App($eventDispatcher->reveal(), $logger->reveal(), new Run($logger->reveal()));
+        self::assertSame(ExitCode::Success, $app->boot());
+        self::assertSame(ExitCode::Failure, $app->boot());
     }
 }
