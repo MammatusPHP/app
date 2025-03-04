@@ -14,7 +14,10 @@ use function DI\get;
 use const WyriHaximus\Constants\Boolean\TRUE_;
 
 return (static fn (): array => [
-    LoggerInterface::class => factory(static function (Logger $logger): LoggerInterface {
+    \Mammatus\Boot\EventLoopDoneLoggerSpecialUseCaseHandler::class => factory(static function (Logger $logger): \Mammatus\Boot\EventLoopDoneLoggerSpecialUseCaseHandler {
+        return new \Mammatus\Boot\EventLoopDoneLoggerSpecialUseCaseHandler($logger);
+    }),
+    LoggerInterface::class => factory(static function (\Mammatus\Boot\EventLoopDoneLoggerSpecialUseCaseHandler $logger): LoggerInterface {
         return $logger;
     }),
     Logger::class => factory(static function (

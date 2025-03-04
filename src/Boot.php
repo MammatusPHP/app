@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mammatus;
 
+use Mammatus\Boot\EventLoopDoneLoggerSpecialUseCaseHandler;
 use Mammatus\Contracts\Argv;
 use Mammatus\Contracts\Bootable;
 use Psr\Log\LoggerInterface;
@@ -24,9 +25,9 @@ final readonly class Boot
     public static function boot(string $class, Argv $argv): ExitCode
     {
         $container = ContainerFactory::create();
-        $logger    = $container->get(LoggerInterface::class);
+        $logger    = $container->get(EventLoopDoneLoggerSpecialUseCaseHandler::class);
         Loop::futureTick(static fn () => $logger->debug('Loop execution running'));
-        assert($logger instanceof LoggerInterface);
+        assert($logger instanceof EventLoopDoneLoggerSpecialUseCaseHandler);
         $exitCode = ExitCode::ContingencyFailure;
         /** @var Deferred<ExitCode> $deferred */
         $deferred = new Deferred();
@@ -49,6 +50,7 @@ final readonly class Boot
 
         $logger->debug('Loop execution starting');
         Loop::run();
+        $logger->eventLoopDone();
         $logger->debug('Loop execution ended');
         $logger->debug('Execution completed with exit code: ' . $exitCode->name);
 
