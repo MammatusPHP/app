@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mammatus\Tests;
 
 use Mammatus\App;
+use Mammatus\App\Nothing;
 use Mammatus\ExitCode;
 use Mammatus\LifeCycleEvents\Boot;
 use Mammatus\LifeCycleEvents\Initialize;
@@ -35,7 +36,7 @@ final class AppTest extends TestCase
         $logger = $this->prophesize(LoggerInterface::class);
         $logger->log(Argument::type('string'), Argument::type('string'), Argument::type('array'))->shouldBeCalledTimes(6);
         $app = new App($eventDispatcher->reveal(), $logger->reveal(), new Run($logger->reveal()));
-        self::assertSame(ExitCode::Success, $app->boot());
-        self::assertSame(ExitCode::Failure, $app->boot());
+        self::assertSame(ExitCode::Success, $app->boot(new Nothing()));
+        self::assertSame(ExitCode::Failure, $app->boot(new Nothing()));
     }
 }

@@ -1,5 +1,14 @@
 parameters:
 	excludePaths:
 		- ../../src/Generated/*
+	ignoreErrors:
+		-
+			message: '#In method \"Mammatus\\Boot::boot\", caught \"Throwable\" must be rethrown.#'
+			path: ../../src/Boot.php
+
+	ergebnis:
+		noExtends:
+			classesAllowedToBeExtended:
+				- Psr\Log\AbstractLogger
 includes:
 	- ../../vendor/wyrihaximus/test-utilities/rules.neon
