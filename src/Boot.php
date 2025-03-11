@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Mammatus;
 
+use Mammatus\Boot\FallBackToEchoWhenEventLoopCompletesItsLoop;
 use Mammatus\Contracts\Argv;
 use Mammatus\Contracts\Bootable;
-use Psr\Log\LoggerInterface;
+use Mammatus\LifeCycleEvents\Initialize;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\Loop;
 use React\Promise\Deferred;
 use Throwable;
@@ -17,6 +19,7 @@ use function React\Async\async;
 /** @template T of Argv */
 final readonly class Boot
 {
+    // phpcs:disable
     /**
      * @param class-string<Bootable<T>> $class
      * @param T                         $argv
@@ -24,19 +27,35 @@ final readonly class Boot
     public static function boot(string $class, Argv $argv): ExitCode
     {
         $container = ContainerFactory::create();
-        $logger    = $container->get(LoggerInterface::class);
-        Loop::futureTick(static fn () => $logger->debug('Loop execution running'));
-        assert($logger instanceof LoggerInterface);
+
+        $logger = $container->get(FallBackToEchoWhenEventLoopCompletesItsLoop::class);
+        assert($logger instanceof FallBackToEchoWhenEventLoopCompletesItsLoop);
+
+        $eventDispatcher = $container->get(EventDispatcherInterface::class);
+        assert($eventDispatcher instanceof EventDispatcherInterface);
+        $eventDispatcher->dispatch(new Initialize());
+
+        Loop::futureTick(async(static function () use ($logger, $eventDispatcher): void {
+            $logger->debug('Booting');
+            $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Boot());
+        }));
+
+        Loop::futureTick(async(static fn () => $logger->debug('Loop execution running')));
+
         $exitCode = ExitCode::ContingencyFailure;
         /** @var Deferred<ExitCode> $deferred */
         $deferred = new Deferred();
-        Loop::futureTick(async(static function () use ($container, $class, $argv, $deferred): void {
+        Loop::futureTick(async(static function () use ($container, $class, $argv, $deferred): bool {
             try {
                 /** @var Bootable<T> $bootable */
                 $bootable = $container->get($class);
                 $deferred->resolve($bootable->boot($argv));
+
+                return true;
             } catch (Throwable $error) {
                 $deferred->reject($error);
+
+                return false;
             }
         }));
         $deferred->promise()->then(static function (ExitCode $resultingExitCode) use (&$exitCode): void {
@@ -49,6 +68,7 @@ final readonly class Boot
 
         $logger->debug('Loop execution starting');
         Loop::run();
+        $logger->eventLoopDone();
         $logger->debug('Loop execution ended');
         $logger->debug('Execution completed with exit code: ' . $exitCode->name);
 

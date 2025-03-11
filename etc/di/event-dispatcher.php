@@ -14,15 +14,15 @@ return (static function () {
     return [
         EventDispatcherInterface::class => factory(static function (
             LoggerInterface $logger,
-            ContainerListenerProvider $listenerProvider
+            ContainerListenerProvider $listenerProvider,
         ) {
             return new Dispatcher(
                 $listenerProvider,
                 new ContextLogger(
                     $logger,
                     ['component' => 'event-dispatcher'],
-                    'event-dispatcher'
-                )
+                    'event-dispatcher',
+                ),
             );
         }),
     ];
