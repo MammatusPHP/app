@@ -7,7 +7,7 @@
         "ext-pcntl": "^8.2",
         "composer-runtime-api": "^2.2",
         "bramus/monolog-colored-line-formatter": "^3.0",
-        "mammatus/life-cycle-events": "^2.0",
+        "mammatus/life-cycle-events": "^2.1",
         "monolog/monolog": "^3.5",
         "php-di-definitions/definitions-gatherer": "^1",
         "php-di/php-di": "^7",

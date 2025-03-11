@@ -35,9 +35,13 @@ final readonly class Boot
         assert($eventDispatcher instanceof EventDispatcherInterface);
         $eventDispatcher->dispatch(new Initialize());
 
-        Loop::futureTick(async(static function () use ($logger, $eventDispatcher): void {
+        Loop::futureTick(async(static function () use ($logger, $eventDispatcher, $class): void {
             $logger->debug('Booting');
-            $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Boot());
+            if ($class === App::class) {
+                $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Boot());
+            } else {
+                $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Start());
+            }
         }));
 
         Loop::futureTick(async(static fn () => $logger->debug('Loop execution running')));
