@@ -3,6 +3,9 @@ parameters:
 		- ../../src/Generated/*
 	ignoreErrors:
 		-
+			message: '#Strict comparison using === between class-string\<Mammatus\\Contracts\\Bootable\<T of Mammatus\\Contracts\\Argv \(class Mammatus\\Boot, argument\)\>\> and#'
+			path: ../../src/Boot.php
+		-
 			message: '#In method \"Mammatus\\Boot::boot\", caught \"Throwable\" must be rethrown.#'
 			path: ../../src/Boot.php
 
