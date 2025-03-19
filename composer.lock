@@ -4988,23 +4988,23 @@
         },
         {
             "name": "composer-unused/symbol-parser",
-            "version": "0.2.5",
+            "version": "0.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer-unused/symbol-parser.git",
-                "reference": "96cee7244aea405e936247d42c49332d52d90ae7"
+                "reference": "7576ca41ca6ebd46b3c4f18d6adb6f1b340bb694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer-unused/symbol-parser/zipball/96cee7244aea405e936247d42c49332d52d90ae7",
-                "reference": "96cee7244aea405e936247d42c49332d52d90ae7",
+                "url": "https://api.github.com/repos/composer-unused/symbol-parser/zipball/7576ca41ca6ebd46b3c4f18d6adb6f1b340bb694",
+                "reference": "7576ca41ca6ebd46b3c4f18d6adb6f1b340bb694",
                 "shasum": ""
             },
             "require": {
                 "composer-unused/contracts": "^0.3",
                 "nikic/php-parser": "^4.18 || ^5.0",
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpdoc-parser": "^1.25",
+                "phpstan/phpdoc-parser": "^1.25 || ^2",
                 "psr/container": "^1.0 || ^2.0",
                 "psr/log": "^1.1 || ^2 || ^3",
                 "symfony/finder": "^5.3 || ^6.0 || ^7.0"
@@ -5055,7 +5055,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-03-09T15:25:51+00:00"
+            "time": "2025-03-17T14:27:54+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -12489,7 +12489,7 @@
         "ext-pcntl": "^8.2",
         "composer-runtime-api": "^2.2"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.2.13"
     },
