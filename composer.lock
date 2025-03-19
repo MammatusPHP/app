@@ -12489,7 +12489,7 @@
         "ext-pcntl": "^8.2",
         "composer-runtime-api": "^2.2"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.2.13"
     },
