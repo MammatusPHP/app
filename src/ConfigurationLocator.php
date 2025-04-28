@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Mammatus;
 
-use function Safe\glob;
+use function glob;
+use function is_array;
 use function strpos;
 use function WyriHaximus\get_in_packages_composer_path;
 
@@ -35,13 +36,14 @@ final class ConfigurationLocator
     private static function require(string $file): iterable
     {
         if (strpos($file, '*') !== FALSE_) {
-            /** @psalm-suppress InvalidArgument */
-            yield from self::requires(glob($file));
+            $glob = glob($file);
+            if (is_array($glob)) {
+                yield from self::requires($glob);
 
-            return;
+                return;
+            }
         }
 
-        /** @psalm-suppress UnresolvableInclude */
         yield from require $file;
     }
 }
