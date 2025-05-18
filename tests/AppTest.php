@@ -10,7 +10,8 @@ use Mammatus\ExitCode;
 use Mammatus\LifeCycleEvents\Boot;
 use Mammatus\LifeCycleEvents\Initialize;
 use Mammatus\Run;
-use Prophecy\Argument;
+use Mockery;
+use PHPUnit\Framework\Attributes\Test;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\Loop;
@@ -19,23 +20,24 @@ use WyriHaximus\TestUtilities\TestCase;
 
 final class AppTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function runThrough(): void
     {
-        $loop = $this->prophesize(LoopInterface::class);
-        Loop::set($loop->reveal());
-        $loop->futureTick(Argument::that(static function (callable $listener): bool {
+        $loop = Mockery::mock(LoopInterface::class);
+        /** @phpstan-ignore staticMethod.internal */
+        Loop::set($loop);
+        $loop->expects('futureTick')->withArgs(static function (callable $listener): bool {
             $listener();
 
             return true;
-        }))->shouldBeCalled();
-        $loop->run()->shouldBeCalled();
-        $eventDispatcher = $this->prophesize(EventDispatcherInterface::class);
-        $eventDispatcher->dispatch(Argument::type(Initialize::class))->shouldBeCalled();
-        $eventDispatcher->dispatch(Argument::type(Boot::class))->shouldBeCalled();
-        $logger = $this->prophesize(LoggerInterface::class);
-        $logger->log(Argument::type('string'), Argument::type('string'), Argument::type('array'))->shouldBeCalledTimes(6);
-        $app = new App($eventDispatcher->reveal(), $logger->reveal(), new Run($logger->reveal()));
+        })->atLeast()->once();
+        $loop->expects('run')->atLeast()->once();
+        $eventDispatcher = Mockery::mock(EventDispatcherInterface::class);
+        $eventDispatcher->expects('dispatch')->with(self::isInstanceOf(Initialize::class))->atLeast()->once();
+        $eventDispatcher->expects('dispatch')->with(self::isInstanceOf(Boot::class))->atLeast()->once();
+        $logger = Mockery::mock(LoggerInterface::class);
+        $logger->expects('log')->with(self::isString(), self::isString(), self::isArray())->times(6);
+        $app = new App($eventDispatcher, $logger, new Run($logger));
         self::assertSame(ExitCode::Success, $app->boot(new Nothing()));
         self::assertSame(ExitCode::Failure, $app->boot(new Nothing()));
     }

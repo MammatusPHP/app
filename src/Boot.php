@@ -65,7 +65,11 @@ final readonly class Boot
         $deferred->promise()->then(static function (ExitCode $resultingExitCode) use (&$exitCode): void {
             $exitCode = $resultingExitCode;
         }, static function (Throwable $throwable) use (&$exitCode, $logger): void {
-            echo $throwable;
+            /**
+             * Ignoring this because we're just passing it along
+             *
+             * @phpstan-ignore psr3.interpolated
+             */
             $logger->emergency($throwable->getMessage());
             $exitCode = ExitCode::Failure;
         });
@@ -74,7 +78,7 @@ final readonly class Boot
         Loop::run();
         $logger->eventLoopDone();
         $logger->debug('Loop execution ended');
-        $logger->debug('Execution completed with exit code: ' . $exitCode->name);
+        $logger->debug('Execution completed with exit code: {exitCode}', ['exitCode' => $exitCode->value]);
 
         return $exitCode;
     }

@@ -44,6 +44,7 @@ final class ConfigurationLocator
             }
         }
 
+        /** @phpstan-ignore generator.keyType,generator.valueType */
         yield from require $file;
     }
 }

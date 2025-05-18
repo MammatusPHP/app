@@ -7,6 +7,7 @@ namespace Mammatus\Boot;
 use Psr\Log\AbstractLogger;
 use Psr\Log\LoggerInterface;
 use Stringable;
+use WyriHaximus\PSR3\Utils;
 
 use function strtoupper;
 
@@ -25,16 +26,21 @@ final class FallBackToEchoWhenEventLoopCompletesItsLoop extends AbstractLogger i
      *
      * @inheritDoc
      */
-    public function log($level, Stringable|string $message, array $context = [])
+    public function log($level, Stringable|string $message, array $context = []): void
     {
-        if ($this->eventLoopStopped !== true) {
+        if (! $this->eventLoopStopped) {
+            /**
+             * Ignoring this because we're just passing it along
+             *
+             * @phpstan-ignore psr3.interpolated
+             */
             $this->logger->log($level, $message, $context);
 
             return;
         }
 
-        /** @phpstan-ignore-next-line */
-        echo strtoupper((string) $level), ' ', $message, PHP_EOL;
+        /** @phpstan-ignore cast.string,argument.type */
+        echo strtoupper((string) $level), ' ', Utils::processPlaceHolders((string) $message, $context), PHP_EOL;
     }
 
     public function eventLoopDone(): void

@@ -10,20 +10,13 @@ use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 
 use function DI\factory;
 
-return (static function () {
-    return [
-        EventDispatcherInterface::class => factory(static function (
-            LoggerInterface $logger,
-            ContainerListenerProvider $listenerProvider,
-        ) {
-            return new Dispatcher(
-                $listenerProvider,
-                new ContextLogger(
-                    $logger,
-                    ['component' => 'event-dispatcher'],
-                    'event-dispatcher',
-                ),
-            );
-        }),
-    ];
-})();
+return (static fn (): array => [
+    EventDispatcherInterface::class => factory(static fn (LoggerInterface $logger, ContainerListenerProvider $listenerProvider): Dispatcher => new Dispatcher(
+        $listenerProvider,
+        new ContextLogger(
+            $logger,
+            ['component' => 'event-dispatcher'],
+            'event-dispatcher',
+        ),
+    )),
+])();
