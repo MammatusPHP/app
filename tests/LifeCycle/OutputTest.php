@@ -6,7 +6,8 @@ namespace Mammatus\Tests\LifeCycle;
 
 use Mammatus\LifeCycle\Output;
 use Mammatus\LifeCycleEvents\Initialize;
-use Prophecy\Argument;
+use Mockery;
+use PHPUnit\Framework\Attributes\Test;
 use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
 use WyriHaximus\TestUtilities\TestCase;
@@ -15,22 +16,22 @@ use const STDERR;
 use const STDIN;
 use const STDOUT;
 
-/** @internal */
 final class OutputTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function runThrough(): void
     {
-        $loop = $this->prophesize(LoopInterface::class);
-        Loop::set($loop->reveal());
-        $loop->addTimer(Argument::type('float'), Argument::that(static function (callable $listener): bool {
+        $loop = Mockery::mock(LoopInterface::class);
+        /** @phpstan-ignore staticMethod.internal */
+        Loop::set($loop);
+        $loop->expects('addTimer')->withArgs(static function (float $interval, callable $listener): bool {
             $listener();
 
             return true;
-        }))->shouldBeCalled();
-        $loop->removeReadStream(STDIN)->shouldBeCalled();
-        $loop->removeWriteStream(STDOUT)->shouldBeCalled();
-        $loop->removeWriteStream(STDERR)->shouldBeCalled();
+        })->atLeast()->once();
+        $loop->expects('removeReadStream')->with(STDIN)->once();
+        $loop->expects('removeWriteStream')->with(STDOUT)->once();
+        $loop->expects('removeWriteStream')->with(STDERR)->once();
 
         (new Output())->handle(new Initialize());
     }

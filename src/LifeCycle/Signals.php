@@ -15,9 +15,9 @@ use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 use const SIGINT;
 use const SIGTERM;
 
-final class Signals implements Listener
+final readonly class Signals implements Listener
 {
-    private const SIGNALS = [
+    private const array SIGNALS = [
         SIGTERM => 'SIGTERM',
         SIGINT => 'SIGINT',
     ];

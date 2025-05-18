@@ -19,7 +19,11 @@ final readonly class Run
     ) {
     }
 
-    /** @param callable(): ExitCode $boot */
+    /**
+     * @param callable(): ExitCode $boot
+     *
+     * @phpstan-ignore shipmonk.deadMethod
+     */
     public function execute(callable $boot, mixed ...$args): ExitCode
     {
         $exitCode = ExitCode::ContingencyFailure;
@@ -29,12 +33,14 @@ final readonly class Run
         $deferred->promise()->then(static function (ExitCode $resultingExitCode) use (&$exitCode): void {
             $exitCode = $resultingExitCode;
         }, function (Throwable $throwable) use (&$exitCode): void {
-            $this->logger->emergency($throwable->getMessage());
+            $this->logger->emergency('Failed executing with the following error: {message}', [
+                'message' => $throwable->getMessage(),
+            ]);
             $exitCode = ExitCode::Failure;
         });
 
         $this->run($this->logger);
-        $this->logger->debug('Execution completed with exit code: ' . $exitCode->name);
+        $this->logger->debug('Execution completed with exit code: {exitCode}', ['exitCode' => $exitCode->value]);
 
         return $exitCode;
     }

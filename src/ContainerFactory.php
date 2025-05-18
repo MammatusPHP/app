@@ -17,11 +17,8 @@ final class ContainerFactory
     /** @param array<string, mixed> $overrides */
     public static function create(array $overrides = []): ContainerInterface
     {
-        /** @psalm-suppress InvalidArgument */
-        $definitions = iterator_to_array(DefinitionsGatherer::gather());
-        /** @psalm-suppress MixedAssignment */
+        $definitions = iterator_to_array(DefinitionsGatherer::gather(), true);
         foreach ($overrides as $key => $value) {
-            /** @psalm-suppress MixedAssignment */
             $definitions[$key] = $value;
         }
 

@@ -19,14 +19,14 @@ use const WyriHaximus\Constants\Boolean\TRUE_;
 /** @implements Bootable<Nothing> */
 final class App implements Bootable
 {
-    private LoggerInterface $logger;
+    private readonly LoggerInterface $logger;
 
     private bool $booted = FALSE_;
 
     public function __construct(
-        private EventDispatcherInterface $eventDispatcher,
+        private readonly EventDispatcherInterface $eventDispatcher,
         LoggerInterface $logger,
-        private Run $run,
+        private readonly Run $run,
     ) {
         $this->logger = new ContextLogger($logger, [], 'app');
     }
@@ -48,7 +48,7 @@ final class App implements Bootable
 
         $exitCode = ExitCode::Success;
         $this->run->run($this->logger);
-        $this->logger->debug('Execution completed with exit code: ' . $exitCode->value);
+        $this->logger->debug('Execution completed with exit code: {exitCode}', ['exitCode' => $exitCode->value]);
 
         return $exitCode;
     }

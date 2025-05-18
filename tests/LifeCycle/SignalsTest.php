@@ -7,37 +7,36 @@ namespace Mammatus\Tests\LifeCycle;
 use Mammatus\LifeCycle\Signals;
 use Mammatus\LifeCycleEvents\Initialize;
 use Mammatus\LifeCycleEvents\Shutdown;
-use Prophecy\Argument;
+use Mockery;
+use PHPUnit\Framework\Attributes\Test;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\Loop;
 use React\EventLoop\LoopInterface;
 use WyriHaximus\TestUtilities\TestCase;
 
-use const SIGINT;
-
-/** @internal */
 final class SignalsTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function runThrough(): void
     {
-        $logger = $this->prophesize(LoggerInterface::class);
-        $logger->log(Argument::type('string'), Argument::type('string'), Argument::type('array'))->shouldBeCalledTimes(11);
-        $logger->log('debug', '[signals] Caught', ['listener' => 'signals', 'signal' => 'SIGINT'])->shouldBeCalledTimes(2);
+        $logger = Mockery::mock(LoggerInterface::class);
+        $logger->expects('log')->with('debug', '[signals] Caught', ['listener' => 'signals', 'signal' => 'SIGINT'])->atLeast()->once();
+        $logger->expects('log')->with(self::isString(), self::isString(), self::isArray())->times(10);
 
-        $loop = $this->prophesize(LoopInterface::class);
-        Loop::set($loop->reveal());
-        $loop->addSignal(Argument::type('int'), Argument::that(static function (callable $listener): bool {
-            $listener(SIGINT);
+        $loop = Mockery::mock(LoopInterface::class);
+        /** @phpstan-ignore staticMethod.internal */
+        Loop::set($loop);
+        $loop->expects('addSignal')->withArgs(static function (int $signal, callable $listener): bool {
+            $listener($signal);
 
             return true;
-        }))->shouldBeCalled();
-        $loop->removeSignal(Argument::type('int'), Argument::type('callable'))->shouldBeCalled();
+        })->atLeast()->once();
+        $loop->expects('removeSignal')->with(self::isInt(), self::isCallable())->atLeast()->once();
 
-        $eventDispatcher = $this->prophesize(EventDispatcherInterface::class);
-        $eventDispatcher->dispatch(Argument::type(Shutdown::class))->shouldBeCalled();
+        $eventDispatcher = Mockery::mock(EventDispatcherInterface::class);
+        $eventDispatcher->expects('dispatch')->with(self::isInstanceOf(Shutdown::class))->atLeast()->once();
 
-        (new Signals($logger->reveal(), $eventDispatcher->reveal()))->handle(new Initialize());
+        (new Signals($logger, $eventDispatcher))->handle(new Initialize());
     }
 }

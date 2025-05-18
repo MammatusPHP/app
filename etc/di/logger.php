@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Mammatus\Boot\FallBackToEchoWhenEventLoopCompletesItsLoop;
+use Monolog\Handler\HandlerInterface;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use WyriHaximus\Monolog\Factory;
@@ -15,12 +16,8 @@ use function DI\get;
 use const WyriHaximus\Constants\Boolean\TRUE_;
 
 return (static fn (): array => [
-    FallBackToEchoWhenEventLoopCompletesItsLoop::class => factory(static function (Logger $logger): FallBackToEchoWhenEventLoopCompletesItsLoop {
-        return new FallBackToEchoWhenEventLoopCompletesItsLoop($logger);
-    }),
-    LoggerInterface::class => factory(static function (FallBackToEchoWhenEventLoopCompletesItsLoop $logger): LoggerInterface {
-        return $logger;
-    }),
+    FallBackToEchoWhenEventLoopCompletesItsLoop::class => factory(static fn (Logger $logger): FallBackToEchoWhenEventLoopCompletesItsLoop => new FallBackToEchoWhenEventLoopCompletesItsLoop($logger)),
+    LoggerInterface::class => factory(static fn (FallBackToEchoWhenEventLoopCompletesItsLoop $logger): LoggerInterface => $logger),
     Logger::class => factory(static function (
         string $version,
         array $handlers,
@@ -34,6 +31,10 @@ return (static fn (): array => [
         ]);
 
         foreach ($handlers as $handler) {
+            if (! ($handler instanceof HandlerInterface)) {
+                continue;
+            }
+
             $logger->pushHandler($handler);
         }
 
