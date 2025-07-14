@@ -28,12 +28,12 @@ final readonly class Boot
     {
         $container = ContainerFactory::create();
 
-        $logger = $container->get(FallBackToEchoWhenEventLoopCompletesItsLoop::class);
-        assert($logger instanceof FallBackToEchoWhenEventLoopCompletesItsLoop);
-
         $eventDispatcher = $container->get(EventDispatcherInterface::class);
         assert($eventDispatcher instanceof EventDispatcherInterface);
-        $eventDispatcher->dispatch(new Initialize());
+        $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Kernel());
+
+        $logger = $container->get(FallBackToEchoWhenEventLoopCompletesItsLoop::class);
+        assert($logger instanceof FallBackToEchoWhenEventLoopCompletesItsLoop);
 
         Loop::futureTick(async(static function () use ($logger, $eventDispatcher, $class): void {
             $logger->debug('Booting');
@@ -43,6 +43,8 @@ final readonly class Boot
                 $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Start());
             }
         }));
+
+        $eventDispatcher->dispatch(new Initialize());
 
         Loop::futureTick(async(static fn () => $logger->debug('Loop execution running')));
 
