@@ -32,7 +32,7 @@
         "mammatus/test-app": "dev-master",
         "runroom/rector-prophecy-to-mocking": "^0.1.0",
         "wyrihaximus/makefiles": "^0.4.2",
-        "wyrihaximus/test-utilities": "^7.2.0"
+        "wyrihaximus/test-utilities": "^8.5.0"
     },
     "autoload": {
         "psr-4": {
