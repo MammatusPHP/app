@@ -26,7 +26,7 @@
         "wyrihaximus/monolog-factory": "^2.0",
         "wyrihaximus/psr-3-context-logger": "^2.0",
         "wyrihaximus/psr-3-utilities": "^2.2",
-        "wyrihaximus/react-psr-3-stdio": "^3.0"
+        "wyrihaximus/react-psr-3-stdio": "^3.0 || ^4.0"
     },
     "require-dev": {
         "mammatus/test-app": "dev-master",
