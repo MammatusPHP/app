@@ -8,6 +8,7 @@
 
     <file>../config</file>
     <file>../di</file>
+    <file>../../etc</file>
     <file>../../src</file>
     <file>../../tests</file>
 

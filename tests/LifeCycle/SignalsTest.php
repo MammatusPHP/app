@@ -37,6 +37,6 @@ final class SignalsTest extends TestCase
         $eventDispatcher = Mockery::mock(EventDispatcherInterface::class);
         $eventDispatcher->expects('dispatch')->with(self::isInstanceOf(Shutdown::class))->atLeast()->once();
 
-        (new Signals($logger, $eventDispatcher))->handle(new Initialize());
+        new Signals($logger, $eventDispatcher)->handle(new Initialize());
     }
 }

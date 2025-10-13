@@ -33,6 +33,6 @@ final class OutputTest extends TestCase
         $loop->expects('removeWriteStream')->with(STDOUT)->once();
         $loop->expects('removeWriteStream')->with(STDERR)->once();
 
-        (new Output())->handle(new Initialize());
+        new Output()->handle(new Initialize());
     }
 }

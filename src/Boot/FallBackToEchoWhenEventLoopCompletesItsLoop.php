@@ -25,6 +25,8 @@ final class FallBackToEchoWhenEventLoopCompletesItsLoop extends AbstractLogger i
      * @param array<mixed> $context
      *
      * @inheritDoc
+     *
+     * @phpstan-ignore typeCoverage.paramTypeCoverage
      */
     public function log($level, Stringable|string $message, array $context = []): void
     {
