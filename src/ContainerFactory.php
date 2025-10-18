@@ -5,31 +5,43 @@ declare(strict_types=1);
 namespace Mammatus;
 
 use DI\ContainerBuilder;
+use DI\Definition\Source\DefinitionArray;
 use PHPDIDefinitions\DefinitionsGatherer;
 use Psr\Container\ContainerInterface;
 
-use function iterator_to_array;
-
-use const WyriHaximus\Constants\Boolean\TRUE_;
+use const DIRECTORY_SEPARATOR;
 
 final class ContainerFactory
 {
-    /** @param array<string, mixed> $overrides */
-    public static function create(array $overrides = []): ContainerInterface
+    private const string CONTAINER_CLASS = 'MammatusGeneratedCompiledContainer';
+
+    public static function create(): ContainerInterface
     {
-        $definitions = iterator_to_array(DefinitionsGatherer::gather(), true);
-        foreach ($overrides as $key => $value) {
-            $definitions[$key] = $value;
-        }
+        /** @phpstan-ignore argument.type */
+        $container = new ContainerBuilder(self::CONTAINER_CLASS);
 
-        $container = new ContainerBuilder();
-        $container->useAttributes(TRUE_);
+        $container->useAutowiring(true);
+        $container->useAttributes(true);
+        $config = self::configDefaults();
         foreach (ConfigurationLocator::locate() as $key => $value) {
-            $definitions['config.' . $key] = $value;
+            $config['config.' . $key] = $value;
         }
 
-        $container->addDefinitions($definitions);
+        $container->addDefinitions(new DefinitionArray($config));
+        $container->addDefinitions(...DefinitionsGatherer::gather());
+        $container->enableCompilation(
+            __DIR__ . DIRECTORY_SEPARATOR . 'Generated',
+            self::CONTAINER_CLASS,
+        );
 
         return $container->build();
+    }
+
+    /** @return array<string, mixed> */
+    private static function configDefaults(): array
+    {
+        return [
+            'config.logger.handlers' => [],
+        ];
     }
 }

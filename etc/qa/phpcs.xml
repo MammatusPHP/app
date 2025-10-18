@@ -14,5 +14,7 @@
 
     <rule ref="WyriHaximus-OSS" />
 
+    <exclude-pattern>src/Generated/*</exclude-pattern>
+
     <exclude name="Generic.NamingConventions.ConstructorName"/>
 </ruleset>
