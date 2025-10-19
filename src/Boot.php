@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mammatus;
 
 use Mammatus\Boot\FallBackToEchoWhenEventLoopCompletesItsLoop;
+use Mammatus\Container\Factory;
 use Mammatus\Contracts\Argv;
 use Mammatus\Contracts\Bootable;
 use Mammatus\LifeCycleEvents\Initialize;
@@ -26,7 +27,7 @@ final readonly class Boot
      */
     public static function boot(string $class, Argv $argv): ExitCode
     {
-        $container = ContainerFactory::create();
+        $container = Factory::create();
 
         $eventDispatcher = $container->get(EventDispatcherInterface::class);
         assert($eventDispatcher instanceof EventDispatcherInterface);

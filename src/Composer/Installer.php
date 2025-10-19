@@ -10,7 +10,7 @@ use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 use Composer\Script\Event;
 use Composer\Script\ScriptEvents;
-use Mammatus\ContainerFactory;
+use Mammatus\Container\Factory;
 use Throwable;
 
 use function microtime;
@@ -45,7 +45,7 @@ final class Installer implements PluginInterface, EventSubscriberInterface
         $start = microtime(true);
         $event->getIO()->write('<info>mammatus/app:</info> Generating PSR-11 container');
         try {
-            ContainerFactory::create();
+            Factory::create();
             $event->getIO()->write('<info>mammatus/app:</info> Generated PSR-11 container in ' . round(microtime(true) - $start, 2) . ' seconds');
         } catch (Throwable $e) {
             $event->getIO()->write('<error>mammatus/app:</error> Failed to generate PSR-11 container: ' . $e->getMessage());
