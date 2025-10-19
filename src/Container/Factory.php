@@ -2,16 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Mammatus;
+namespace Mammatus\Container;
 
 use DI\ContainerBuilder;
 use DI\Definition\Source\DefinitionArray;
+use Mammatus\ConfigurationLocator;
 use PHPDIDefinitions\DefinitionsGatherer;
 use Psr\Container\ContainerInterface;
 
+use function dirname;
+
 use const DIRECTORY_SEPARATOR;
 
-final class ContainerFactory
+final class Factory
 {
     private const string CONTAINER_CLASS = 'MammatusGeneratedCompiledContainer';
 
@@ -22,7 +25,7 @@ final class ContainerFactory
 
         $container->useAutowiring(true);
         $container->useAttributes(true);
-        $config = self::configDefaults();
+        $config = Defaults::create();
         foreach (ConfigurationLocator::locate() as $key => $value) {
             $config['config.' . $key] = $value;
         }
@@ -30,18 +33,10 @@ final class ContainerFactory
         $container->addDefinitions(new DefinitionArray($config));
         $container->addDefinitions(...DefinitionsGatherer::gather());
         $container->enableCompilation(
-            __DIR__ . DIRECTORY_SEPARATOR . 'Generated',
+            dirname(__FILE__, 2) . DIRECTORY_SEPARATOR . 'Generated',
             self::CONTAINER_CLASS,
         );
 
         return $container->build();
-    }
-
-    /** @return array<string, mixed> */
-    private static function configDefaults(): array
-    {
-        return [
-            'config.logger.handlers' => [],
-        ];
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0decf903c2bc3b9d8d2f4a3688da730",
+    "content-hash": "d9fb39d8e6f736010206ed7a5fd7e325",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -1124,16 +1124,16 @@
         },
         {
             "name": "mammatus/life-cycle-events",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MammatusPHP/life-cycle-events.git",
-                "reference": "0900806bdc00654992c74154c5b1a2a74d10df7f"
+                "reference": "6ec730e47f7483fcdb9860f9429a50c420d13efa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MammatusPHP/life-cycle-events/zipball/0900806bdc00654992c74154c5b1a2a74d10df7f",
-                "reference": "0900806bdc00654992c74154c5b1a2a74d10df7f",
+                "url": "https://api.github.com/repos/MammatusPHP/life-cycle-events/zipball/6ec730e47f7483fcdb9860f9429a50c420d13efa",
+                "reference": "6ec730e47f7483fcdb9860f9429a50c420d13efa",
                 "shasum": ""
             },
             "require": {
@@ -1155,7 +1155,7 @@
             "description": "♻️ Life Cycle Events for MammatusPHP Applications",
             "support": {
                 "issues": "https://github.com/MammatusPHP/life-cycle-events/issues",
-                "source": "https://github.com/MammatusPHP/life-cycle-events/tree/2.2.0"
+                "source": "https://github.com/MammatusPHP/life-cycle-events/tree/2.3.0"
             },
             "funding": [
                 {
@@ -1163,7 +1163,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-07-10T21:00:23+00:00"
+            "time": "2025-10-19T10:55:24+00:00"
         },
         {
             "name": "marc-mabe/php-enum",
@@ -10773,8 +10773,8 @@
     "platform": {
         "php": "^8.4",
         "ext-pcntl": "^8.3",
-        "composer-plugin-api": "^2.0",
-        "composer-runtime-api": "^2.2"
+        "composer-plugin-api": "^2.0.0",
+        "composer-runtime-api": "^2.2.0"
     },
     "platform-dev": {},
     "platform-overrides": {

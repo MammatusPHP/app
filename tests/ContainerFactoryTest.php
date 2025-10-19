@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Mammatus\Tests;
 
-use Mammatus\ContainerFactory;
+use Mammatus\Container\Factory;
 use Monolog\Logger;
 use PHPUnit\Framework\TestCase;
 use Psr\EventDispatcher\EventDispatcherInterface;
@@ -15,7 +15,7 @@ final class ContainerFactoryTest extends TestCase
 {
     public function testConfig(): void
     {
-        $container = ContainerFactory::create();
+        $container = Factory::create();
         self::assertInstanceOf(ContainerListenerProvider::class, $container->get(ContainerListenerProvider::class));
         self::assertInstanceOf(EventDispatcherInterface::class, $container->get(EventDispatcherInterface::class));
         self::assertInstanceOf(LoggerInterface::class, $container->get(LoggerInterface::class));

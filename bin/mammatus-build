@@ -1,0 +1,20 @@
+#!/usr/bin/php
+<?php declare(strict_types=1);
+
+use Mammatus\App;
+use Mammatus\Build;
+use Mammatus\Contracts\Argv;
+
+(static function(string $_composer_autoload_path): void {
+    /**
+     * Require Composer's autoloader
+     */
+    require_once $_composer_autoload_path;
+})($_composer_autoload_path);
+
+(static function(): void {
+    /**
+     * Create and boot up the application
+     */
+    exit(Build::build()->value);
+})();
