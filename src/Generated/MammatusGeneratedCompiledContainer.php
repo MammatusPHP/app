@@ -41,7 +41,7 @@ class MammatusGeneratedCompiledContainer extends DI\CompiledContainer{
         if (!true) {
             throw new \DI\Definition\Exception\InvalidDefinition("The environment variable 'APP_VERSION' has not been defined");
         }
-        return 'dev-1760876770';
+        return 'dev';
     }
 
     protected function get6()
@@ -120,7 +120,7 @@ class MammatusGeneratedCompiledContainer extends DI\CompiledContainer{
 
     protected function get11()
     {
-        return '16daa3f5a260887039d9ee07e5';
+        return '310591b35bfd0f1fa3473dddfa';
     }
 
 }

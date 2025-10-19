@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9fb39d8e6f736010206ed7a5fd7e325",
+    "content-hash": "462b801eb991839a6f6be95f04c7508b",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -1401,16 +1401,16 @@
         },
         {
             "name": "php-di-definitions/definitions-gatherer",
-            "version": "dev-switch-to-yielding-definistion-sources",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-DI-Definitions/definitions-gatherer.git",
-                "reference": "7b3305002f2a419957a9f6d7705a31c6778360b6"
+                "reference": "a8a0246e28b4668a89d17daa8d11a73860fce26d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI-Definitions/definitions-gatherer/zipball/7b3305002f2a419957a9f6d7705a31c6778360b6",
-                "reference": "7b3305002f2a419957a9f6d7705a31c6778360b6",
+                "url": "https://api.github.com/repos/PHP-DI-Definitions/definitions-gatherer/zipball/a8a0246e28b4668a89d17daa8d11a73860fce26d",
+                "reference": "a8a0246e28b4668a89d17daa8d11a73860fce26d",
                 "shasum": ""
             },
             "require": {
@@ -1420,8 +1420,8 @@
                 "wyrihaximus/get-in-packages-composer.jason": "^2.3.0"
             },
             "require-dev": {
-                "wyrihaximus/makefiles": "^0.3.4",
-                "wyrihaximus/test-utilities": "^7.0.0"
+                "wyrihaximus/makefiles": "^0.5.0",
+                "wyrihaximus/test-utilities": "^8.5.0"
             },
             "type": "library",
             "autoload": {
@@ -1442,7 +1442,7 @@
             "description": "Collect definition files from composer.json's",
             "support": {
                 "issues": "https://github.com/PHP-DI-Definitions/definitions-gatherer/issues",
-                "source": "https://github.com/PHP-DI-Definitions/definitions-gatherer/tree/switch-to-yielding-definistion-sources"
+                "source": "https://github.com/PHP-DI-Definitions/definitions-gatherer/tree/2.0.0"
             },
             "funding": [
                 {
@@ -1450,7 +1450,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-10-13T18:56:04+00:00"
+            "time": "2025-10-19T13:06:39+00:00"
         },
         {
             "name": "php-di-definitions/dummy",
@@ -10755,18 +10755,10 @@
             "time": "2024-11-13T14:43:14+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "php-di-definitions/definitions-gatherer",
-            "version": "dev-switch-to-yielding-definistion-sources",
-            "alias": "2.0.0",
-            "alias_normalized": "2.0.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "mammatus/test-app": 20,
-        "php-di-definitions/definitions-gatherer": 20
+        "mammatus/test-app": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
