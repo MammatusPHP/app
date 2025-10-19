@@ -11,7 +11,7 @@
     "bramus/monolog-colored-line-formatter": "^3.0.0",
     "mammatus/life-cycle-events": "^2.3.0",
     "monolog/monolog": "^3.5.0",
-    "php-di-definitions/definitions-gatherer": "dev-switch-to-yielding-definistion-sources as 2.0.0",
+    "php-di-definitions/definitions-gatherer": "^2.0.0",
     "php-di-definitions/dummy": "^1.2.0",
     "php-di/php-di": "^7",
     "psr/container": "^1 || ^2.0.2",

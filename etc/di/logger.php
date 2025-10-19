@@ -40,7 +40,7 @@ return (static fn (): array => [
 
         return $logger;
     })->
-        parameter('version', env('APP_VERSION', 'dev-' . time()))->
+        parameter('version', env('APP_VERSION', 'dev'))->
         parameter('k8sPodName', env('K8S_POD_NAME', null))->
         parameter('k8sNamespace', env('K8S_NAMESPACE', null))->
         parameter('handlers', get('config.logger.handlers')),
