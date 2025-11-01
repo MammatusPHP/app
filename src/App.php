@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Mammatus;
 
+use Mammatus\App\Group;
 use Mammatus\App\Nothing;
 use Mammatus\Contracts\Argv;
 use Mammatus\Contracts\Bootable;
+use Mammatus\Groups\Groups;
 use Mammatus\LifeCycleEvents\Boot;
 use Mammatus\LifeCycleEvents\Initialize;
 use Psr\EventDispatcher\EventDispatcherInterface;
@@ -16,7 +18,7 @@ use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 use const WyriHaximus\Constants\Boolean\FALSE_;
 use const WyriHaximus\Constants\Boolean\TRUE_;
 
-/** @implements Bootable<Nothing> */
+/** @implements Bootable<Group> */
 final class App implements Bootable
 {
     private readonly LoggerInterface $logger;
@@ -27,11 +29,12 @@ final class App implements Bootable
         private readonly EventDispatcherInterface $eventDispatcher,
         LoggerInterface $logger,
         private readonly Run $run,
+        private readonly Groups $groups,
     ) {
         $this->logger = new ContextLogger($logger, [], 'app');
     }
 
-    public function boot(Argv $nothing): ExitCode
+    public function boot(Argv $group): ExitCode
     {
         if ($this->booted === TRUE_) {
             $this->logger->emergency('Can\'t be booted twice');
@@ -44,7 +47,9 @@ final class App implements Bootable
         $this->booted = TRUE_;
         $this->logger->debug('Booting');
 
-        $this->eventDispatcher->dispatch(new Boot());
+        if ($group instanceof Group) {
+            $this->groups->boot($group->group);
+        }
 
         $exitCode = ExitCode::Success;
         $this->run->run($this->logger);

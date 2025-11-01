@@ -8,7 +8,6 @@ use Mammatus\Boot\FallBackToEchoWhenEventLoopCompletesItsLoop;
 use Mammatus\Container\Factory;
 use Mammatus\Contracts\Argv;
 use Mammatus\Contracts\Bootable;
-use Mammatus\LifeCycleEvents\Initialize;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use React\EventLoop\Loop;
 use React\Promise\Deferred;
@@ -31,7 +30,7 @@ final readonly class Boot
 
         $eventDispatcher = $container->get(EventDispatcherInterface::class);
         assert($eventDispatcher instanceof EventDispatcherInterface);
-        $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Kernel());
+        $eventDispatcher->dispatch(new LifeCycleEvents\Kernel());
 
         $logger = $container->get(FallBackToEchoWhenEventLoopCompletesItsLoop::class);
         assert($logger instanceof FallBackToEchoWhenEventLoopCompletesItsLoop);
@@ -39,13 +38,11 @@ final readonly class Boot
         Loop::futureTick(async(static function () use ($logger, $eventDispatcher, $class): void {
             $logger->debug('Booting');
             if ($class === App::class) {
-                $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Boot());
+                $eventDispatcher->dispatch(new LifeCycleEvents\Boot());
             } else {
-                $eventDispatcher->dispatch(new \Mammatus\LifeCycleEvents\Start());
+                $eventDispatcher->dispatch(new LifeCycleEvents\Start());
             }
         }));
-
-        $eventDispatcher->dispatch(new Initialize());
 
         Loop::futureTick(async(static fn () => $logger->debug('Loop execution running')));
 
