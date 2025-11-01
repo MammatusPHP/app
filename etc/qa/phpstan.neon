@@ -4,6 +4,7 @@ parameters:
 		- ../../etc
 		- ../../src
 		- ../../tests
+		- ../dev-app
 	excludePaths:
 		- ../../src/Generated/*
 	ignoreErrors:
