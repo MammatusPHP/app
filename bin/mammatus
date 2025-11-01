@@ -12,9 +12,15 @@ use Mammatus\Contracts\Argv;
     require_once $_composer_autoload_path;
 })($_composer_autoload_path);
 
-(static function(): void {
+(static function(Argv $argv): void {
     /**
      * Create and boot up the application
      */
-    exit(Boot::boot(App::class, new App\Nothing())->value);
-})();
+    exit(Boot::boot(App::class, $argv)->value);
+})((static function(array $argv): Argv {
+    if (array_key_exists(1, $argv)) {
+        return new App\Group($argv[1]);
+    }
+
+    throw new RuntimeException('No group specified');
+})($argv));
