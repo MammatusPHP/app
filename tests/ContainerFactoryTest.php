@@ -6,6 +6,7 @@ namespace Mammatus\Tests;
 
 use Mammatus\Container\Factory;
 use Monolog\Logger;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Log\LoggerInterface;
@@ -13,7 +14,8 @@ use WyriHaximus\Broadcast\ContainerListenerProvider;
 
 final class ContainerFactoryTest extends TestCase
 {
-    public function testConfig(): void
+    #[Test]
+    public function config(): void
     {
         $container = Factory::create();
         self::assertInstanceOf(ContainerListenerProvider::class, $container->get(ContainerListenerProvider::class));
