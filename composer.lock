@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4e90a92a49dd5b7f1711deb7554f675",
+    "content-hash": "875ca76aeeec9601506de29953e4f842",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -825,23 +825,23 @@
         },
         {
             "name": "jetbrains/phpstorm-stubs",
-            "version": "v2024.3",
+            "version": "v2025.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/JetBrains/phpstorm-stubs.git",
-                "reference": "0e82bdfe850c71857ee4ee3501ed82a9fc5d043c"
+                "url": "https://github.com/JetBrains/phpstorm-stubs",
+                "reference": "d1ee5e570343bd4276a3d5959e6e1c2530b006d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/0e82bdfe850c71857ee4ee3501ed82a9fc5d043c",
-                "reference": "0e82bdfe850c71857ee4ee3501ed82a9fc5d043c",
+                "url": "https://api.github.com/repos/JetBrains/phpstorm-stubs/zipball/d1ee5e570343bd4276a3d5959e6e1c2530b006d0",
+                "reference": "d1ee5e570343bd4276a3d5959e6e1c2530b006d0",
                 "shasum": ""
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "v3.64.0",
-                "nikic/php-parser": "v5.3.1",
-                "phpdocumentor/reflection-docblock": "5.6.0",
-                "phpunit/phpunit": "11.4.3"
+                "friendsofphp/php-cs-fixer": "^v3.86",
+                "nikic/php-parser": "^v5.6",
+                "phpdocumentor/reflection-docblock": "^5.6",
+                "phpunit/phpunit": "^12.3"
             },
             "type": "library",
             "autoload": {
@@ -865,10 +865,7 @@
                 "stubs",
                 "type"
             ],
-            "support": {
-                "source": "https://github.com/JetBrains/phpstorm-stubs/tree/v2024.3"
-            },
-            "time": "2024-12-14T08:03:12+00:00"
+            "time": "2025-09-18T15:47:24+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -2206,30 +2203,30 @@
         },
         {
             "name": "roave/better-reflection",
-            "version": "6.66.0",
+            "version": "6.69.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/BetterReflection.git",
-                "reference": "e70a06dc5cd572e108448a431b6c2840ad16c1b2"
+                "reference": "dccbd10b5b3da8718f2945ad50faf90a1cb2db55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/e70a06dc5cd572e108448a431b6c2840ad16c1b2",
-                "reference": "e70a06dc5cd572e108448a431b6c2840ad16c1b2",
+                "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/dccbd10b5b3da8718f2945ad50faf90a1cb2db55",
+                "reference": "dccbd10b5b3da8718f2945ad50faf90a1cb2db55",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "jetbrains/phpstorm-stubs": "2024.3",
-                "nikic/php-parser": "^5.6.1",
-                "php": "~8.2.0 || ~8.3.2 || ~8.4.1 || ~8.5.0"
+                "jetbrains/phpstorm-stubs": "2025.3",
+                "nikic/php-parser": "^5.7.0",
+                "php": "~8.3.2 || ~8.4.1 || ~8.5.0"
             },
             "conflict": {
                 "thecodingmachine/safe": "<1.1.3"
             },
             "require-dev": {
-                "phpbench/phpbench": "^1.4.1",
-                "phpunit/phpunit": "^11.5.42"
+                "phpbench/phpbench": "^1.4.3",
+                "phpunit/phpunit": "^12.5.8"
             },
             "suggest": {
                 "composer/composer": "Required to use the ComposerSourceLocator"
@@ -2269,9 +2266,9 @@
             "description": "Better Reflection - an improved code reflection API",
             "support": {
                 "issues": "https://github.com/Roave/BetterReflection/issues",
-                "source": "https://github.com/Roave/BetterReflection/tree/6.66.0"
+                "source": "https://github.com/Roave/BetterReflection/tree/6.69.0"
             },
-            "time": "2025-11-04T20:38:27+00:00"
+            "time": "2026-02-01T13:20:30+00:00"
         },
         {
             "name": "seld/jsonlint",
@@ -3652,16 +3649,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.22.2",
+            "version": "v3.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "946ddeafa3c9f4ce279d1f34051af041db0e16f2"
+                "reference": "a64dc5d2cc7d6cafb9347f6cd802d0d06d0351c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/946ddeafa3c9f4ce279d1f34051af041db0e16f2",
-                "reference": "946ddeafa3c9f4ce279d1f34051af041db0e16f2",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a64dc5d2cc7d6cafb9347f6cd802d0d06d0351c9",
+                "reference": "a64dc5d2cc7d6cafb9347f6cd802d0d06d0351c9",
                 "shasum": ""
             },
             "require": {
@@ -3715,7 +3712,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.22.2"
+                "source": "https://github.com/twigphp/Twig/tree/v3.23.0"
             },
             "funding": [
                 {
@@ -3727,44 +3724,55 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-14T11:28:47+00:00"
+            "time": "2026-01-23T21:00:41+00:00"
         },
         {
             "name": "wyrihaximus/broadcast",
-            "version": "2.5.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-broadcast.git",
-                "reference": "0b95a37d56997525261293c04fb047b8dc3660bf"
+                "reference": "d3b78bdd94d052558eb4e67482dc480d9b3526fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-broadcast/zipball/0b95a37d56997525261293c04fb047b8dc3660bf",
-                "reference": "0b95a37d56997525261293c04fb047b8dc3660bf",
+                "url": "https://api.github.com/repos/WyriHaximus/php-broadcast/zipball/d3b78bdd94d052558eb4e67482dc480d9b3526fe",
+                "reference": "d3b78bdd94d052558eb4e67482dc480d9b3526fe",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2",
-                "ext-json": "^8.2",
-                "php": "^8.2",
+                "ext-json": "^8.4",
+                "php": "^8.4",
                 "psr/container": "^1 || ^2",
                 "psr/event-dispatcher": "^1",
                 "psr/log": "^1.1 || ^2 || ^3",
                 "react/async": "^4.3",
-                "react/promise": "^3.2",
-                "roave/better-reflection": "^6.26",
+                "react/promise": "^3.3",
+                "roave/better-reflection": "^6.66",
                 "wyrihaximus/broadcast-contracts": "^1.3",
-                "wyrihaximus/generative-composer-plugin-tooling": "^1.0.1"
+                "wyrihaximus/generative-composer-plugin-tooling": "^1.2.0"
             },
             "require-dev": {
-                "pimple/pimple": "^3.5",
-                "react/promise-timer": "^1.10",
+                "pimple/pimple": "^3.6.0",
+                "react/promise-timer": "^1.11",
+                "shipmonk/dead-code-detector": "^0.14.1",
                 "the-orville/exceptions": "dev-master",
-                "wyrihaximus/async-test-utilities": "^8.0.5"
+                "wyrihaximus/async-test-utilities": "^12.0.0",
+                "wyrihaximus/makefiles": "^0.9.0",
+                "wyrihaximus/phpstan-react": "^2.0.0"
+            },
+            "suggest": {
+                "shipmonk/dead-code-detector": "This package supports ^0.14.1 by hooking in and marking all listeners as alive"
             },
             "type": "composer-plugin",
             "extra": {
                 "class": "WyriHaximus\\Broadcast\\Composer\\Installer",
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                },
                 "wyrihaximus": {
                     "broadcast": {
                         "has-listeners": true
@@ -3783,7 +3791,7 @@
             "description": "✨ Statically on composer install/update compiled (async) event dispatcher",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-broadcast/issues",
-                "source": "https://github.com/WyriHaximus/php-broadcast/tree/2.5.0"
+                "source": "https://github.com/WyriHaximus/php-broadcast/tree/2.6.1"
             },
             "funding": [
                 {
@@ -3791,7 +3799,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-06T13:26:16+00:00"
+            "time": "2026-02-16T20:46:00+00:00"
         },
         {
             "name": "wyrihaximus/broadcast-contracts",
