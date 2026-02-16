@@ -16,7 +16,10 @@ use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 use const WyriHaximus\Constants\Boolean\FALSE_;
 use const WyriHaximus\Constants\Boolean\TRUE_;
 
-/** @implements Bootable<Group> */
+/**
+ * @api
+ * @implements Bootable<Group>
+ */
 final class App implements Bootable
 {
     private readonly LoggerInterface $logger;

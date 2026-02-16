@@ -12,6 +12,7 @@ use Throwable;
 
 use function React\Async\async;
 
+/** @api */
 final readonly class Run
 {
     public function __construct(
@@ -19,11 +20,7 @@ final readonly class Run
     ) {
     }
 
-    /**
-     * @param callable(): ExitCode $boot
-     *
-     * @phpstan-ignore shipmonk.deadMethod
-     */
+    /** @param callable(): ExitCode $boot */
     public function execute(callable $boot, mixed ...$args): ExitCode
     {
         $exitCode = ExitCode::ContingencyFailure;
