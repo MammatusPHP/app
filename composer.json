@@ -36,7 +36,7 @@
   "require-dev": {
     "mammatus/test-app": "dev-master",
     "runroom/rector-prophecy-to-mocking": "^0.1.0",
-    "wyrihaximus/makefiles": "^0.7.16",
+    "wyrihaximus/makefiles": "^0.9.0",
     "wyrihaximus/test-utilities": "^12.0.0"
   },
   "autoload": {
