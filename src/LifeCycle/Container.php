@@ -14,12 +14,10 @@ use function round;
 
 final readonly class Container implements Listener
 {
-    /** @phpstan-ignore shipmonk.deadMethod */
     public function __construct(private LoggerInterface $logger)
     {
     }
 
-    /** @phpstan-ignore shipmonk.deadMethod */
     public function handle(Build $event): void
     {
         $start = microtime(true);
