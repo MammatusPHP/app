@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28804f24d4522a02b84241b104b15590",
+    "content-hash": "5a6d094d2c41551a7d47d69ee86baaad",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -10852,16 +10852,16 @@
         },
         {
             "name": "wyrihaximus/makefiles",
-            "version": "0.9.0",
+            "version": "0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/Makefiles.git",
-                "reference": "26137de124aa14e200f1e2db0902ef8d3d60c2bc"
+                "reference": "ff6cd1cc874900d2aa543b4a773bcd108f9e3eeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/26137de124aa14e200f1e2db0902ef8d3d60c2bc",
-                "reference": "26137de124aa14e200f1e2db0902ef8d3d60c2bc",
+                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/ff6cd1cc874900d2aa543b4a773bcd108f9e3eeb",
+                "reference": "ff6cd1cc874900d2aa543b4a773bcd108f9e3eeb",
                 "shasum": ""
             },
             "require": {
@@ -10897,7 +10897,7 @@
             "description": "🧱 Makefile building blocks",
             "support": {
                 "issues": "https://github.com/WyriHaximus/Makefiles/issues",
-                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.9.0"
+                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.10.2"
             },
             "funding": [
                 {
@@ -10905,7 +10905,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-11T08:34:05+00:00"
+            "time": "2026-02-26T19:01:56+00:00"
         },
         {
             "name": "wyrihaximus/phpstan-rules-wrapper",
