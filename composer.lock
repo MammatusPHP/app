@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6083482ad2d877d18f1f1d91028fc7f4",
+    "content-hash": "840988a4f1890de669c954f262136271",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -1117,16 +1117,16 @@
         },
         {
             "name": "mammatus/groups",
-            "version": "0.3.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MammatusPHP/groups.git",
-                "reference": "3ac7379777f60a46dabe5437af5b31ee458bf722"
+                "reference": "1c221290e33810363ff61c89da28eaf0f9a403c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MammatusPHP/groups/zipball/3ac7379777f60a46dabe5437af5b31ee458bf722",
-                "reference": "3ac7379777f60a46dabe5437af5b31ee458bf722",
+                "url": "https://api.github.com/repos/MammatusPHP/groups/zipball/1c221290e33810363ff61c89da28eaf0f9a403c4",
+                "reference": "1c221290e33810363ff61c89da28eaf0f9a403c4",
                 "shasum": ""
             },
             "require": {
@@ -1145,8 +1145,8 @@
                 "pimple/pimple": "^3.6.2",
                 "shipmonk/dead-code-detector": "^0.14.1 || ^0.15 || ^1.1.0",
                 "wyrihaximus/broadcast": "^2.7.0",
-                "wyrihaximus/makefiles": "^0.12.1",
-                "wyrihaximus/test-utilities": "^13.2.0"
+                "wyrihaximus/makefiles": "^0.12.3",
+                "wyrihaximus/test-utilities": "^13.3.0"
             },
             "suggest": {
                 "shipmonk/dead-code-detector": "This package supports ^1 || ^0.15 || ^0.14.1 by hooking in and marking all listeners as alive"
@@ -1181,7 +1181,7 @@
             "description": "👩‍👩‍👧‍👦 All groups related tooling",
             "support": {
                 "issues": "https://github.com/MammatusPHP/groups/issues",
-                "source": "https://github.com/MammatusPHP/groups/tree/0.3.0"
+                "source": "https://github.com/MammatusPHP/groups/tree/0.4.0"
             },
             "funding": [
                 {
@@ -1189,7 +1189,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-06-27T11:45:12+00:00"
+            "time": "2026-07-05T09:50:02+00:00"
         },
         {
             "name": "mammatus/life-cycle-events",
