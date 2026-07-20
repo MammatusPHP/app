@@ -36,8 +36,8 @@
   "require-dev": {
     "mammatus/test-app": "dev-master",
     "runroom/rector-prophecy-to-mocking": "^0.1.0",
-    "wyrihaximus/makefiles": "^0.10.6",
-    "wyrihaximus/test-utilities": "^13.2.0"
+    "wyrihaximus/makefiles": "^0.13.2",
+    "wyrihaximus/test-utilities": "^13.4.0"
   },
   "autoload": {
     "psr-4": {
@@ -66,6 +66,7 @@
       "mindplay/composer-locator": true,
       "phpstan/extension-installer": true,
       "wyrihaximus/broadcast": true,
+      "wyrihaximus/generative-composer-plugin-tooling": true,
       "wyrihaximus/makefiles": true,
       "wyrihaximus/test-utilities": true
     },
@@ -90,6 +91,9 @@
     "wyrihaximus": {
       "broadcast": {
         "has-listeners": true
+      },
+      "generative-composer-plugin-tooling": {
+        "cache": "etc/state/generative-composer-plugin-tooling.json"
       }
     }
   },

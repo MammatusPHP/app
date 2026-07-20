@@ -39,7 +39,6 @@ final class Installer implements PluginInterface, EventSubscriberInterface
         // does nothing, see getSubscribedEvents() instead.
     }
 
-    /** @phpstan-ignore shipmonk.deadMethod */
     public static function buildContainer(Event $event): void
     {
         $start = microtime(true);
