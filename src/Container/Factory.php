@@ -33,7 +33,7 @@ final class Factory
         $container->addDefinitions(new DefinitionArray($config));
         $container->addDefinitions(...DefinitionsGatherer::gather());
         $container->enableCompilation(
-            dirname(__FILE__, 2) . DIRECTORY_SEPARATOR . 'Generated',
+            dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Generated',
             self::CONTAINER_CLASS,
         );
 

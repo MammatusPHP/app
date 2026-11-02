@@ -5,13 +5,13 @@
   "type": "composer-plugin",
   "require": {
     "php": "^8.4",
-    "ext-pcntl": "^8.3",
+    "ext-pcntl": "^8.4",
     "composer-plugin-api": "^2.0.0",
     "composer-runtime-api": "^2.2.0",
     "bramus/monolog-colored-line-formatter": "^3.1.2",
-    "mammatus/groups": "^0.1.1 || ^0.2.0 || ^0.3.0 || ^0.4.0",
-    "mammatus/life-cycle-events": "^2.3",
-    "monolog/monolog": "^3.9.0",
+    "mammatus/groups": "^0.4.0",
+    "mammatus/life-cycle-events": "^2.3.0",
+    "monolog/monolog": "^3.10.0",
     "php-di-definitions/definitions-gatherer": "^2.0.0",
     "php-di-definitions/dummy": "^1.2.0",
     "php-di/php-di": "^7.1.1",
@@ -21,23 +21,23 @@
     "react/async": "^4.3.0",
     "react/event-loop": "^1.6.0",
     "react/promise": "^3.3.0",
-    "wyrihaximus/broadcast": "^2.6.1",
+    "wyrihaximus/broadcast": "^2.7.0",
     "wyrihaximus/broadcast-contracts": "^1.3.0",
     "wyrihaximus/constants": "^1.6.0",
-    "wyrihaximus/generative-composer-plugin-tooling": "^1.4.0",
+    "wyrihaximus/generative-composer-plugin-tooling": "^1.9.0",
     "wyrihaximus/get-in-packages-composer.jason": "^2.3.0",
     "wyrihaximus/metrics": "^3.0.0",
-    "wyrihaximus/metrics-tactician": "^1.2.0",
-    "wyrihaximus/monolog-factory": "^2.0.0",
+    "wyrihaximus/metrics-tactician": "^1.3.0",
+    "wyrihaximus/monolog-factory": "^2.1.0",
     "wyrihaximus/psr-3-context-logger": "^3.0.0",
-    "wyrihaximus/psr-3-utilities": "^2.3.0",
+    "wyrihaximus/psr-3-utilities": "^2.4.0",
     "wyrihaximus/react-psr-3-stdio": "^4.0.0"
   },
   "require-dev": {
     "mammatus/test-app": "dev-master",
     "runroom/rector-prophecy-to-mocking": "^0.1.0",
-    "wyrihaximus/makefiles": "^0.13.2",
-    "wyrihaximus/test-utilities": "^14.1.0"
+    "wyrihaximus/makefiles": "^0.15.5",
+    "wyrihaximus/test-utilities": "^14.7.0"
   },
   "autoload": {
     "psr-4": {
@@ -76,7 +76,7 @@
     "sort-packages": true
   },
   "extra": {
-    "class": "Mammatus\\Composer\\Installer",
+    "class": "Mammatus\\Composer\\ContainerCompiler",
     "mammatus": {
       "config": [
         "etc/config/*.php"
@@ -106,11 +106,11 @@
     ],
     "post-autoload-dump": [
       "rm src/Generated/MammatusGeneratedCompiledContainer.php || true",
-      "Mammatus\\Composer\\Installer::buildContainer"
+      "Mammatus\\Composer\\ContainerCompiler::buildContainer"
     ],
     "generate-container": [
       "rm src/Generated/MammatusGeneratedCompiledContainer.php || true",
-      "Mammatus\\Composer\\Installer::buildContainer"
+      "Mammatus\\Composer\\ContainerCompiler::buildContainer"
     ]
   }
 }

@@ -10,7 +10,7 @@ use Mammatus\Contracts\Argv;
      * Require Composer's autoloader
      */
     require_once $_composer_autoload_path;
-})($_composer_autoload_path);
+})($_composer_autoload_path ?? (dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php'));
 
 (static function(Argv $argv): void {
     /**

@@ -7,7 +7,7 @@ namespace Mammatus\DevApp;
 use Mammatus\Groups\Attributes\Group;
 use Mammatus\Groups\Type;
 
-#[Group(Type::Normal, 'groep')]
+#[Group(Type::Normal, 'group')]
 final class Groep
 {
 }

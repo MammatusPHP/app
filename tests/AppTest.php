@@ -41,7 +41,7 @@ final class AppTest extends TestCase
         $logger = Mockery::mock(LoggerInterface::class);
         $logger->expects('log')->with(self::isString(), self::isString(), self::isArray())->times(6);
         $app = new App($eventDispatcher, $logger, new Run($logger), new Groups($container));
-        self::assertSame(ExitCode::Success, $app->boot(new Group('groep')));
-        self::assertSame(ExitCode::Failure, $app->boot(new Group('groep')));
+        self::assertSame(ExitCode::Success, $app->boot(new Group('group')));
+        self::assertSame(ExitCode::Failure, $app->boot(new Group('group')));
     }
 }

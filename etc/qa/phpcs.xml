@@ -15,7 +15,12 @@
 
     <rule ref="WyriHaximus-OSS" />
 
-    <exclude-pattern>src/Generated/*</exclude-pattern>
-
     <exclude name="Generic.NamingConventions.ConstructorName"/>
+
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern>src/Generated/MammatusGeneratedCompiledContainer\.php$</exclude-pattern>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
+        <exclude-pattern>src/Generated/MammatusGeneratedCompiledContainer\.php$</exclude-pattern>
+    </rule>
 </ruleset>
