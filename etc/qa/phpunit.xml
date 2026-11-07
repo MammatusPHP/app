@@ -9,6 +9,9 @@
         <include>
             <directory suffix=".php">../../src/</directory>
         </include>
+        <exclude>
+            <directory>../../src/Generated/</directory>
+        </exclude>
     </source>
     <extensions>
         <bootstrap class="Ergebnis\PHPUnit\SlowTestDetector\Extension"/>

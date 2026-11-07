@@ -5,42 +5,29 @@ declare(strict_types=1);
 namespace Mammatus\Composer;
 
 use Composer\Composer;
-use Composer\EventDispatcher\EventSubscriberInterface;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 use Composer\Script\Event;
-use Composer\Script\ScriptEvents;
 use Mammatus\Container\Factory;
 use Throwable;
 
+use function dirname;
+use function is_file;
 use function microtime;
 use function round;
+use function unlink;
 
-final class Installer implements PluginInterface, EventSubscriberInterface
+use const DIRECTORY_SEPARATOR;
+
+final class Installer implements PluginInterface
 {
-    /** @return array<string, string> */
-    public static function getSubscribedEvents(): array
+    public static function generateContainer(Event $event): void
     {
-        return [ScriptEvents::POST_AUTOLOAD_DUMP => 'buildContainer'];
-    }
+        $containerFile = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Generated' . DIRECTORY_SEPARATOR . 'MammatusGeneratedCompiledContainer.php';
+        if (is_file($containerFile)) {
+            unlink($containerFile);
+        }
 
-    public function activate(Composer $composer, IOInterface $io): void
-    {
-        // does nothing, see getSubscribedEvents() instead.
-    }
-
-    public function deactivate(Composer $composer, IOInterface $io): void
-    {
-        // does nothing, see getSubscribedEvents() instead.
-    }
-
-    public function uninstall(Composer $composer, IOInterface $io): void
-    {
-        // does nothing, see getSubscribedEvents() instead.
-    }
-
-    public static function buildContainer(Event $event): void
-    {
         $start = microtime(true);
         $event->getIO()->write('<info>mammatus/app:</info> Generating PSR-11 container');
         try {
@@ -49,5 +36,17 @@ final class Installer implements PluginInterface, EventSubscriberInterface
         } catch (Throwable $e) {
             $event->getIO()->write('<error>mammatus/app:</error> Failed to generate PSR-11 container: ' . $e->getMessage());
         }
+    }
+
+    public function activate(Composer $composer, IOInterface $io): void
+    {
+    }
+
+    public function deactivate(Composer $composer, IOInterface $io): void
+    {
+    }
+
+    public function uninstall(Composer $composer, IOInterface $io): void
+    {
     }
 }
