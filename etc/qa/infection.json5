@@ -3,6 +3,9 @@
     "source": {
         "directories": [
             "../../src"
+        ],
+        "excludes": [
+            "Generated"
         ]
     },
     "logs": {
@@ -20,5 +23,6 @@
                 "Mammatus\\ContainerFactory::create"
             ]
         }
-    }
+    },
+    "threads": 64
 }

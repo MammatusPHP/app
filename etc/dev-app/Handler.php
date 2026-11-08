@@ -10,7 +10,7 @@ final class Handler implements LifeCycleHandler
 {
     public static function group(): string
     {
-        return 'groep';
+        return 'group';
     }
 
     public function start(): void
