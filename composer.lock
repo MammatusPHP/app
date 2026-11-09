@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7903239a3ad81a844da099027200d90f",
+    "content-hash": "b950ff3c77c5dbd586fedc6a9992e39f",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -3757,7 +3757,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-25T13:20:01+00:00"
+            "time": "2026-09-25T13:20:01+00:00",
+            "published-time": "2026-09-25T13:20:14+00:00"
         },
         {
             "name": "wyrihaximus/broadcast",
@@ -3926,16 +3927,16 @@
         },
         {
             "name": "wyrihaximus/generative-composer-plugin-tooling",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-generative-composer-plugin-tooling.git",
-                "reference": "a6f44abb13470c43d7c529bff084c4790a6d060c"
+                "reference": "fa43c89c947d92d2e3f096b5e732ad6a8d030f20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-generative-composer-plugin-tooling/zipball/a6f44abb13470c43d7c529bff084c4790a6d060c",
-                "reference": "a6f44abb13470c43d7c529bff084c4790a6d060c",
+                "url": "https://api.github.com/repos/WyriHaximus/php-generative-composer-plugin-tooling/zipball/fa43c89c947d92d2e3f096b5e732ad6a8d030f20",
+                "reference": "fa43c89c947d92d2e3f096b5e732ad6a8d030f20",
                 "shasum": ""
             },
             "require": {
@@ -3971,7 +3972,7 @@
             "description": "🐦‍🔥 Generative Composer Plugin Tooling",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-generative-composer-plugin-tooling/issues",
-                "source": "https://github.com/WyriHaximus/php-generative-composer-plugin-tooling/tree/1.9.0"
+                "source": "https://github.com/WyriHaximus/php-generative-composer-plugin-tooling/tree/1.9.1"
             },
             "funding": [
                 {
@@ -3979,7 +3980,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-08T11:58:59+00:00"
+            "time": "2026-11-08T17:04:28+00:00",
+            "published-time": "2026-11-08T17:05:07+00:00"
         },
         {
             "name": "wyrihaximus/get-in-packages-composer.jason",
@@ -4089,7 +4091,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-16T12:35:06+00:00"
+            "time": "2024-07-16T12:35:06+00:00",
+            "published-time": "2024-07-16T12:40:45+00:00"
         },
         {
             "name": "wyrihaximus/metrics",
@@ -4571,7 +4574,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-05-29T11:21:53+00:00"
+            "time": "2026-05-29T11:21:53+00:00",
+            "published-time": "2026-05-29T11:40:13+00:00"
         }
     ],
     "packages-dev": [

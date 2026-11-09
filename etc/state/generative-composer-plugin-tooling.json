@@ -18,7 +18,6 @@
         "Mammatus\\Groups\\Composer\\LifeCycleHandler": "vendor\/mammatus\/groups\/src\/Composer\/LifeCycleHandler.php",
         "Mammatus\\Groups\\Composer\\Plugin": "vendor\/mammatus\/groups\/src\/Composer\/Plugin.php",
         "Mammatus\\Groups\\Contracts\\LifeCycleHandler": "vendor\/mammatus\/groups\/src\/Contracts\/LifeCycleHandler.php",
-        "Mammatus\\Groups\\Fallback\\DealingWIthLife": "vendor\/mammatus\/groups\/src\/Fallback\/DealingWIthLife.php",
         "Mammatus\\Groups\\Groups": "vendor\/mammatus\/groups\/src\/Groups.php",
         "Mammatus\\Groups\\PHPSan\\ShipMonkDeadCode": "vendor\/mammatus\/groups\/src\/PHPSan\/ShipMonkDeadCode.php",
         "Mammatus\\Groups\\SpawnDaemons": "vendor\/mammatus\/groups\/src\/SpawnDaemons.php",
@@ -82,7 +81,6 @@
         "ab989ee8f9138f906c1591aea67197f0": false,
         "ada6e130accb41fc520a39024bc4c305": false,
         "b1a9c370c5e841646ef67cb770c4020e": false,
-        "b5607ac8912a77536ec65014dec68b85": true,
         "b8876ed352f129dc49b0c43b4b3725e6": false,
         "c67615f517d831725ed8f138cb8b4a74": false,
         "c6f551c09b9ff3f4b2b8d9ace7a44fce": false,
@@ -119,11 +117,6 @@
             "Mammatus\\DevApp\\Handler": {
                 "Mammatus\\Groups\\Composer\\Collector": [
                     "Tzo0MToiTWFtbWF0dXNcR3JvdXBzXENvbXBvc2VyXExpZmVDeWNsZUhhbmRsZXIiOjE6e3M6MTY6ImxpZmVDeWNsZUhhbmRsZXIiO3M6MjM6Ik1hbW1hdHVzXERldkFwcFxIYW5kbGVyIjt9"
-                ]
-            },
-            "Mammatus\\Groups\\Fallback\\DealingWIthLife": {
-                "Mammatus\\Groups\\Composer\\Collector": [
-                    "Tzo0MToiTWFtbWF0dXNcR3JvdXBzXENvbXBvc2VyXExpZmVDeWNsZUhhbmRsZXIiOjE6e3M6MTY6ImxpZmVDeWNsZUhhbmRsZXIiO3M6NDA6Ik1hbW1hdHVzXEdyb3Vwc1xGYWxsYmFja1xEZWFsaW5nV0l0aExpZmUiO30="
                 ]
             }
         },
@@ -173,9 +166,9 @@
         }
     },
     "failedReflections": [
+        "Mammatus\\ExitCode",
         "MammatusGeneratedCompiledContainer",
         "Mammatus\\Composer\\ContainerCompiler",
-        "Mammatus\\ExitCode",
         "Mammatus\\Groups\\Type",
         "Mammatus\\Groups\\Composer\\Installer",
         "WyriHaximus\\Broadcast\\Composer\\Installer"
@@ -203,7 +196,6 @@
         "vendor\/mammatus\/groups\/src\/Composer\/LifeCycleHandler.php": "46de6d94b4b24b44589a51f4053560ee",
         "vendor\/mammatus\/groups\/src\/Composer\/Plugin.php": "d0494fc56d46d527dc6348eaef654c52",
         "vendor\/mammatus\/groups\/src\/Contracts\/LifeCycleHandler.php": "1f39df26c218f4c6f9d937a586921fe9",
-        "vendor\/mammatus\/groups\/src\/Fallback\/DealingWIthLife.php": "a204e15a4b3c05e743fc64cecd91c563",
         "vendor\/mammatus\/groups\/src\/Groups.php": "fde9fec04ef0e06f243b801ff31f5d7e",
         "vendor\/mammatus\/groups\/src\/PHPSan\/ShipMonkDeadCode.php": "7c4ae3abfb33687be93ead4fb88a5342",
         "vendor\/mammatus\/groups\/src\/SpawnDaemons.php": "c70b225c272133c904e625aa84e53d8f",
@@ -216,8 +208,8 @@
         "vendor\/wyrihaximus\/broadcast\/src\/Dummy\/AsyncListener.php": "637ba799e7ae0795a0d3bbb8042dd60c",
         "vendor\/wyrihaximus\/broadcast\/src\/Dummy\/Event.php": "eee7243b959b042edda703bee019fb49",
         "vendor\/wyrihaximus\/broadcast\/src\/Dummy\/Listener.php": "5233f4f45b2017ab27c3b06cb470f3a7",
-        "vendor\/wyrihaximus\/broadcast\/src\/Generated\/AbstractListenerProvider.php": "2cc7907c6c80cd18759b9078a44517d5",
+        "vendor\/wyrihaximus\/broadcast\/src\/Generated\/AbstractListenerProvider.php": "8fe6328676038148247e91d08003b8d3",
         "vendor\/wyrihaximus\/broadcast\/src\/PHPSan\/ShipMonkDeadCode.php": "b84f4bdbbd1605b7f6eefe6011a816f1"
     },
-    "installedJsonHash": "a284063e4079a29645fb5c6962d699a9"
+    "installedJsonHash": "b00e9c11c5416efe55dff1452e8a2251"
 }
