@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Mammatus\Tests\LifeCycle;
 
 use Mammatus\LifeCycle\Intel;
-use Mammatus\LifeCycleEvents\Initialize;
+use Mammatus\LifeCycleEvents\Kernel;
 use Mockery;
 use PHPUnit\Framework\Attributes\Test;
 use Psr\Log\LoggerInterface;
@@ -35,6 +35,6 @@ final class IntelTest extends TestCase
         $logger->expects('log')->with('debug', '[intel] PHP extensions: {extensions}', ['listener' => 'intel', 'extensions' => $extensionList])->once();
         $logger->expects('log')->with('debug', '[intel] Event loop: {eventLoop}', ['listener' => 'intel', 'eventLoop' => get_class(Loop::get())])->once();
 
-        new Intel($logger)->handle(new Initialize());
+        new Intel($logger)->handle(new Kernel());
     }
 }

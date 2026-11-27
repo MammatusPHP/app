@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Mammatus\LifeCycle;
 
-use Mammatus\LifeCycleEvents\Initialize;
+use Mammatus\LifeCycleEvents\Kernel;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\Loop;
 use WyriHaximus\Broadcast\Contracts\Listener;
@@ -32,7 +32,7 @@ final readonly class Intel implements Listener
         );
     }
 
-    public function handle(Initialize $event): void
+    public function handle(Kernel $event): void
     {
         $extensions = get_loaded_extensions();
         sort($extensions, SORT_STRING);
