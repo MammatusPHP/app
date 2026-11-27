@@ -77,11 +77,11 @@ The following events are dispatched during the boot process. All events come fro
 
 | Event | Dispatched by | Dispatch mode | Built-in listeners |
 |-------|---------------|---------------|--------------------|
-| `Mammatus\LifeCycleEvents\Kernel` | `Boot::boot()` | Synchronous | None |
+| `Mammatus\LifeCycleEvents\Kernel` | `Boot::boot()` | Synchronous | [`Mammatus\LifeCycle\Intel`](src/LifeCycle/Intel.php) (logs the PHP version, extensions, and event loop) |
 | `Mammatus\LifeCycleEvents\Boot` | `Boot::boot()` | Async (`Loop::futureTick`) | None |
 | `Mammatus\LifeCycleEvents\Start` | `Boot::boot()` | Async (`Loop::futureTick`) | None |
-| `Mammatus\LifeCycleEvents\Initialize` | `App::boot()` | Async (`Loop::futureTick`) | `Mammatus\LifeCycle\Output` (removes STD\* streams from the loop), `Mammatus\LifeCycle\Signals` (sets up SIGINT/SIGTERM handlers) |
-| `Mammatus\LifeCycleEvents\Build` | `Build::build()` | Synchronous | `Mammatus\LifeCycle\Container` (generates the compiled PSR-11 container) |
+| `Mammatus\LifeCycleEvents\Initialize` | `App::boot()` | Async (`Loop::futureTick`) | [`Mammatus\LifeCycle\Output`](src/LifeCycle/Output.php) (removes STD\* streams from the loop), [`Mammatus\LifeCycle\Signals`](src/LifeCycle/Signals.php) (sets up SIGINT/SIGTERM handlers) |
+| `Mammatus\LifeCycleEvents\Build` | `Build::build()` | Synchronous | [`Mammatus\LifeCycle\Container`](src/LifeCycle/Container.php) (generates the compiled PSR-11 container) |
 | `Mammatus\LifeCycleEvents\Shutdown` | `Mammatus\LifeCycle\Signals` | On SIGINT/SIGTERM signal | None |
 
 ### Dispatch order
