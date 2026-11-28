@@ -23,6 +23,7 @@
         "Mammatus\\Groups\\PHPSan\\ShipMonkDeadCode": "vendor\/mammatus\/groups\/src\/PHPSan\/ShipMonkDeadCode.php",
         "Mammatus\\Groups\\SpawnDaemons": "vendor\/mammatus\/groups\/src\/SpawnDaemons.php",
         "Mammatus\\LifeCycle\\Container": "src\/LifeCycle\/Container.php",
+        "Mammatus\\LifeCycle\\Intel": "src\/LifeCycle\/Intel.php",
         "Mammatus\\LifeCycle\\Output": "src\/LifeCycle\/Output.php",
         "Mammatus\\LifeCycle\\Signals": "src\/LifeCycle\/Signals.php",
         "Mammatus\\Run": "src\/Run.php",
@@ -55,9 +56,11 @@
         "2baf08494162989c4d4bfe853fe5ef74": true,
         "2e310282ec9eca86f427b1b49a2a202d": false,
         "2f88e5c9c6d2ad3b1fa9bf03cd54b17d": false,
+        "334f309f21c32a0c94fc0563e6407147": false,
         "36e78fc9bfa70ba5fbe084a0fb7c6117": true,
         "375b528f2c8895e4746e1ca57f785925": false,
         "3adcbb888ab9b08c711f500a645ef78c": false,
+        "3de9ab98602bb8f97f968c1ce2e80dde": true,
         "3df0e3e80decb3f1d695a3a1ef5f1026": false,
         "40a11302617bf083043f5363ec83bbae": true,
         "45e2c828d162ce8eeb241e62beccc10c": false,
@@ -78,6 +81,7 @@
         "8caf57da29e0e005f67a29a604b76274": false,
         "92fdabd42362b12a1fc0d6b30539098b": true,
         "96fa684720fc83bc51be0d9506a3b29a": false,
+        "984bf5973ed0b52098a025a7260dcd38": true,
         "9fabefb6c7fdde0144c6a1ca5649e27b": false,
         "ab989ee8f9138f906c1591aea67197f0": false,
         "ada6e130accb41fc520a39024bc4c305": false,
@@ -145,6 +149,11 @@
                     "TzozOToiV3lyaUhheGltdXNcQnJvYWRjYXN0XENvbXBvc2VyXExpc3RlbmVyIjo1OntzOjU6ImV2ZW50IjtzOjMwOiJNYW1tYXR1c1xMaWZlQ3ljbGVFdmVudHNcQnVpbGQiO3M6NToiY2xhc3MiO3M6Mjg6Ik1hbW1hdHVzXExpZmVDeWNsZVxDb250YWluZXIiO3M6NjoibWV0aG9kIjtzOjY6ImhhbmRsZSI7czo2OiJzdGF0aWMiO2I6MDtzOjU6ImFzeW5jIjtiOjA7fQ=="
                 ]
             },
+            "Mammatus\\LifeCycle\\Intel": {
+                "WyriHaximus\\Broadcast\\Composer\\Collector": [
+                    "TzozOToiV3lyaUhheGltdXNcQnJvYWRjYXN0XENvbXBvc2VyXExpc3RlbmVyIjo1OntzOjU6ImV2ZW50IjtzOjMxOiJNYW1tYXR1c1xMaWZlQ3ljbGVFdmVudHNcS2VybmVsIjtzOjU6ImNsYXNzIjtzOjI0OiJNYW1tYXR1c1xMaWZlQ3ljbGVcSW50ZWwiO3M6NjoibWV0aG9kIjtzOjY6ImhhbmRsZSI7czo2OiJzdGF0aWMiO2I6MDtzOjU6ImFzeW5jIjtiOjA7fQ=="
+                ]
+            },
             "Mammatus\\LifeCycle\\Output": {
                 "WyriHaximus\\Broadcast\\Composer\\Collector": [
                     "TzozOToiV3lyaUhheGltdXNcQnJvYWRjYXN0XENvbXBvc2VyXExpc3RlbmVyIjo1OntzOjU6ImV2ZW50IjtzOjM1OiJNYW1tYXR1c1xMaWZlQ3ljbGVFdmVudHNcSW5pdGlhbGl6ZSI7czo1OiJjbGFzcyI7czoyNToiTWFtbWF0dXNcTGlmZUN5Y2xlXE91dHB1dCI7czo2OiJtZXRob2QiO3M6NjoiaGFuZGxlIjtzOjY6InN0YXRpYyI7YjowO3M6NToiYXN5bmMiO2I6MDt9"
@@ -173,9 +182,9 @@
         }
     },
     "failedReflections": [
-        "Mammatus\\Composer\\ContainerCompiler",
-        "MammatusGeneratedCompiledContainer",
         "Mammatus\\ExitCode",
+        "MammatusGeneratedCompiledContainer",
+        "Mammatus\\Composer\\ContainerCompiler",
         "Mammatus\\Groups\\Composer\\Installer",
         "Mammatus\\Groups\\Type",
         "WyriHaximus\\Broadcast\\Composer\\Installer"
@@ -194,6 +203,7 @@
         "src\/Contracts\/Argv.php": "1a1e4e79c87a167401b45fd3533cf0f8",
         "src\/Contracts\/Bootable.php": "cd4c975b8d1e22aabfbc9b0aa77f5d6e",
         "src\/LifeCycle\/Container.php": "0305fef0bc48d181b68d77521b757887",
+        "src\/LifeCycle\/Intel.php": "d6953791f41008740f63ccf9972cea7a",
         "src\/LifeCycle\/Output.php": "7c771f6a3293360c0391b9f99edfd2b8",
         "src\/LifeCycle\/Signals.php": "e516360daa307b95ae405c71c04040bb",
         "src\/Run.php": "0fa8a2f3f0a2734bb1801a42f2d1f4e4",
@@ -219,5 +229,5 @@
         "vendor\/wyrihaximus\/broadcast\/src\/Generated\/AbstractListenerProvider.php": "2cc7907c6c80cd18759b9078a44517d5",
         "vendor\/wyrihaximus\/broadcast\/src\/PHPSan\/ShipMonkDeadCode.php": "b84f4bdbbd1605b7f6eefe6011a816f1"
     },
-    "installedJsonHash": "a99432c8ac8a3a255cc3bab68f0b5e9a"
+    "installedJsonHash": "bb8285911cdd114e3387b65d11190cd3"
 }
